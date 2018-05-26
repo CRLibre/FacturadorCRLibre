@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Hero</title>
+
+
+    <!-- Prevent the demo from appearing in search engines -->
+    <meta name="robots" content="noindex" />
+
+    <!-- App CSS -->
+    <link type="text/css" href="./assets/css/app.css" rel="stylesheet" />
+    <link type="text/css" href="./assets/css/app.rtl.css" rel="stylesheet" />
+
+    <!-- Simplebar -->
+    <link type="text/css" href="./assets/vendor/simplebar.css" rel="stylesheet" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+
+<body>
+    <div class="mdk-drawer-layout js-mdk-drawer-layout" data-fullbleed="" data-push="" data-responsive-width="992px" data-has-scrolling-region="">
+
+        <div class="mdk-drawer-layout__content">
+            <!-- header-layout -->
+            <div class="mdk-header-layout js-mdk-header-layout  mdk-header--fixed  mdk-header-layout__content--scrollable">
+                <!-- header -->
+                <div class="mdk-header js-mdk-header bg-primary" data-fixed="">
+                    <div class="mdk-header__content">
+
+                        <nav class="navbar navbar-expand-md navbar-dark bg-primary d-flex-none">
+                            <button class="btn btn-link text-white pl-0" type="button" data-toggle="sidebar">
+    <i class="material-icons align-middle md-36">short_text</i>
+  </button>
+                            <div class="page-title m-0">Form Controls</div>
+
+                            <div class="collapse navbar-collapse" id="mainNavbar">
+                                <ul class="navbar-nav ml-auto align-items-center">
+                                    <li class="nav-item nav-link">
+                                        <div class="form-group m-0">
+                                            <div class="input-group input-group--inline">
+                                                <div class="input-group-addon">
+                                                    <i class="material-icons">search</i>
+                                                </div>
+                                                <input type="text" class="form-control" name="search" placeholder="Search app.." />
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown nav-language d-flex align-items-center">
+                                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+          EN
+        </a>
+                                        <div class="dropdown-menu dropdown-menu-right ">
+                                            <ul class="list-unstyled">
+                                                <li>
+                                                    <a href="./account.html" class="dropdown-item active">
+                <img src="../../../flags.fmcdn.net/data/flags/w1160/us.png" style="width: 25px; vertical-align: middle" alt="English" /> English
+              </a>
+                                                </li>
+                                                <li>
+                                                    <a href="./account.html" class="dropdown-item">
+                <img src="../../../flags.fmcdn.net/data/flags/w1160/fr.png" style="width: 25px; vertical-align: middle" alt="French" /> French
+              </a>
+                                                </li>
+                                                <li>
+                                                    <a href="./account.html" class="dropdown-item">
+                <img src="../../../flags.fmcdn.net/data/flags/w1160/de.png" style="width: 25px; vertical-align: middle" alt="English" /> German
+              </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown notifications d-flex align-self-center align-items-center" id="navbarNotifications">
+                                        <a href="#" class="nav-link dropdown-toggle notifications--active" data-toggle="dropdown" aria-expanded="false">
+          <i class="material-icons align-middle">notifications</i>
+        </a>
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notificationsDropdown" id="notificationsDropdown">
+                                            <ul class="nav nav-tabs-notifications d-flex px-0" id="notifications-ul" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" id="notifications-tab" data-toggle="tab" href="#notifications" role="tab" aria-controls="notifications" aria-selected="true">Notifications</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="alerts-tab" data-toggle="tab" href="#alerts" role="tab" aria-controls="alerts" aria-selected="false">Alerts</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Messages</a>
+                                                </li>
+                                            </ul>
+                                            <div class="tab-content" id="notifications-tabs">
+                                                <div class="tab-pane fade show active" id="notifications" role="tabpanel" aria-labelledby="notifications-tab">
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item">
+                                                            <div class="w-100">
+                                                                <a href="#">john</a> received a new quote</div>
+                                                            <div class="w-100 text-muted">4 secs ago</div>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <div class="w-100">
+                                                                <a href="#">karen</a> received a new quote</div>
+                                                            <div class="w-100 text-muted">25 mins ago</div>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <div class="w-100">
+                                                                <a href="#">jim</a> received a new quote</div>
+                                                            <div class="w-100 text-muted">7 hrs ago</div>
+                                                        </li>
+                                                        <li class="list-group-item text-right">
+                                                            <a href="#">
+                    <span class="align-middle">View All</span>
+                    <i class="material-icons md-18 align-middle">arrow_forward</i>
+                  </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="tab-pane fade" id="alerts" role="tabpanel" aria-labelledby="alerts-tab">
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item">
+                                                            <div class="media align-items-center">
+                                                                <i class="material-icons align-middle mr-2 text-warning">
+                      info_outline
+                    </i>
+                                                                <div class="media-body">
+                                                                    <div class="w-100">
+                                                                        <a href="./profile.html">john</a> received a new
+                                                                        <a href="#">quote</a>
+                                                                    </div>
+                                                                    <div class="w-100 text-muted">4 secs ago</div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <div class="media align-items-center">
+                                                                <i class="material-icons align-middle mr-2 text-success">
+                      check_circle
+                    </i>
+                                                                <div class="media-body">
+                                                                    <div class="w-100">
+                                                                        <a href="./profile.html">karen</a> completed a
+                                                                        <a href="#">task</a>
+                                                                    </div>
+                                                                    <div class="w-100 text-muted">25 mins ago</div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <div class="media align-items-center">
+                                                                <i class="material-icons align-middle mr-2 text-danger">
+                      warning
+                    </i>
+                                                                <div class="media-body">
+                                                                    <div class="w-100">
+                                                                        <a href="./profile.html">jim</a> removed a
+                                                                        <a href="#">task</a>
+                                                                    </div>
+                                                                    <div class="w-100 text-muted">7 hrs ago</div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item text-right">
+                                                            <a href="#">
+                    <span class="align-middle">View All</span>
+                    <i class="material-icons md-18 align-middle">arrow_forward</i>
+                  </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="tab-pane fade" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item">
+                                                            <div class="media align-items-center">
+                                                                <a href="./profile.html">
+                      <img src="./assets/images/avatars/person-1.jpg" class="img-fluid rounded-circle mr-2" width="35" alt="" />
+                    </a>
+                                                                <div class="media-body">
+                                                                    <div class="w-100">I started that project we talked...</div>
+                                                                    <div class="w-100 text-muted">4 secs ago</div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <div class="media align-items-center">
+                                                                <a href="./profile.html">
+                      <img src="./assets/images/avatars/person-11.jpg" class="img-fluid rounded-circle mr-2" width="35" alt="" />
+                    </a>
+                                                                <div class="media-body">
+                                                                    <div class="w-100">Can we arrange a meeting?...</div>
+                                                                    <div class="w-100 text-muted">25 mins ago</div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <div class="media align-items-center">
+                                                                <a href="./profile.html">
+                      <img src="./assets/images/avatars/person-12.jpg" class="img-fluid rounded-circle mr-2" width="35" alt="" />
+                    </a>
+                                                                <div class="media-body">
+                                                                    <div class="w-100">We need to fix some bugs...</div>
+                                                                    <div class="w-100 text-muted">7 hrs ago</div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item text-right">
+                                                            <a href="#">
+                    <span class="align-middle">View All</span>
+                    <i class="material-icons md-18 align-middle">arrow_forward</i>
+                  </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item nav-divider">
+                                        </li><li class="nav-item">
+                                            <a href="#" class="nav-link dropdown-toggle dropdown-clear-caret" data-toggle="sidebar" data-target="#user-drawer">
+          Frontted
+          <img src="https://pbs.twimg.com/profile_images/928893978266697728/3enwe0fO_400x400.jpg" class="img-fluid rounded-circle ml-1" width="35" alt="" />
+        </a>
+                                        </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- content -->
+                <div class="mdk-header-layout__content ls-top-navbar mdk-header-layout__content--scrollable h-100">
+                    <!-- main content -->
+                    <div class="container-fluid">
+                        <h2>Form controls</h2>
+                        <p class="lead">
+                            Textual form controls—like <code>&lt;input&gt;s</code>, <code>&lt;select&gt;</code>s, and <code>&lt;textarea&gt;</code>s—are styled with the .form-control class. Included are styles for general appearance, focus state, sizing,
+                            and more.
+                        </p>
+                        <hr />
+                        <div class="card">
+                            <div class="card-body">
+                                <form />
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Email address</label>
+                                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Example select</label>
+                                        <select class="form-control" id="exampleFormControlSelect1">
+            <option />1
+            <option />2
+            <option />3
+            <option />4
+            <option />5
+          </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect2">Example multiple select</label>
+                                        <select multiple="" class="form-control" id="exampleFormControlSelect2">
+            <option />1
+            <option />2
+            <option />3
+            <option />4
+            <option />5
+          </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Example textarea</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-header">
+                                For file inputs, swap the <code>.form-control</code> for <code>.form-control-file</code>.
+                            </div>
+                            <div class="card-body">
+                                <form />
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Example file input</label>
+                                        <input type="file" class="form-control-file" id="exampleFormControlFile1" />
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Sizing</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" />
+                                    <input class="form-control" type="text" placeholder="Default input" />
+                                    <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" />
+                                </div>
+                                <select class="form-control form-control-lg">
+        <option />Large select
+      </select>
+                                <select class="form-control">
+        <option />Default select
+      </select>
+                                <select class="form-control form-control-sm">
+        <option />Small select
+      </select>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Readonly</h4>
+                            </div>
+                            <div class="card-body">
+                                <input class="form-control" type="text" placeholder="Readonly input here…" readonly="" />
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Readonly plain text</h4>
+                                <p class="mb-0">
+                                    If you want to have <code>&lt;input readonly&gt;</code> elements in your form styled as plain text, use the <code>.form-control-plaintext</code> class to remove the default form field styling and preserve the correct
+                                    margin and padding.
+                                </p>
+                            </div>
+                            <div class="card-body">
+                                <form />
+                                    <div class="form-group row">
+                                        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="email@example.com" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control" id="inputPassword" placeholder="Password" />
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-header">
+                                <h4 class="card-title">Inline form</h4>
+                            </div>
+                            <div class="card-body">
+                                <form class="form-inline" />
+                                    <div class="form-group">
+                                        <label for="staticEmail2" class="sr-only">Email</label>
+                                        <input type="text" readonly="" class="form-control-plaintext" id="staticEmail2" value="email@example.com" />
+                                    </div>
+                                    <div class="form-group mx-sm-3">
+                                        <label for="inputPassword2" class="sr-only">Password</label>
+                                        <input type="password" class="form-control" id="inputPassword2" placeholder="Password" />
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Confirm identity</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- // END drawer-layout__content -->
+
+        <!-- drawer -->
+        <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
+            <div class="mdk-drawer__content">
+                <div class="mdk-drawer__inner" data-simplebar="" data-simplebar-force-enabled="true">
+
+                    <nav class="drawer  drawer--dark">
+                        <div class="drawer-spacer">
+                            <div class="media align-items-center">
+                                <a href="./index.html" class="drawer-brand-circle mr-2">H</a>
+                                <div class="media-body">
+                                    <a href="./index.html" class="h5 m-0 text-link">Hero Pro - Admin</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- HEADING -->
+                        <div class="py-2 drawer-heading">
+                            Dashboards
+                        </div>
+                        <!-- MENU -->
+                        <ul class="drawer-menu" id="dasboardMenu" data-children=".drawer-submenu">
+                            <li class="drawer-menu-item ">
+                                <a href="./index.html">
+        <i class="material-icons">poll</i>
+        <span class="drawer-menu-text"> Financial</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item">
+                                <a href="./projects.html">
+        <i class="material-icons">dns</i>
+        <span class="drawer-menu-text"> Projects/Tickets</span>
+        <span class="badge badge-pill badge-success ml-1">4</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item ">
+                                <a href="./retail.html">
+        <i class="material-icons">store</i>
+        <span class="drawer-menu-text"> E-Commerce</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item ">
+                                <a href="./real-estate-grid.html">
+        <i class="material-icons">business</i>
+        <span class="drawer-menu-text"> Real Estate</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item ">
+                                <a href="./profile.html">
+        <i class="material-icons">pages</i>
+        <span class="drawer-menu-text"> Social</span>
+      </a>
+                            </li>
+                        </ul>
+
+                        <!-- HEADING -->
+                        <div class="py-2 drawer-heading">
+                            Components
+                        </div>
+
+                        <!-- MENU -->
+                        <ul class="drawer-menu" id="mainMenu" data-children=".drawer-submenu">
+                            <li class="drawer-menu-item drawer-submenu">
+                                <a data-toggle="collapse" data-parent="#mainMenu" href="#" data-target="#uiComponentsMenu" aria-controls="uiComponentsMenu" aria-expanded="false" class="collapsed">
+        <i class="material-icons">library_books</i>
+        <span class="drawer-menu-text"> UI Components</span>
+      </a>
+                                <ul class="collapse " id="uiComponentsMenu">
+                                    <li class="drawer-menu-item "><a href="./ui-buttons.html">Buttons</a></li>
+                                    <li class="drawer-menu-item "><a href="./ui-colors.html">Colors</a></li>
+                                    <li class="drawer-menu-item "><a href="./ui-grid.html">Grid</a></li>
+                                    <li class="drawer-menu-item "><a href="./ui-icons.html">Icons</a></li>
+                                    <li class="drawer-menu-item "><a href="./ui-typography.html">Typography</a></li>
+                                    <li class="drawer-menu-item "><a href="./ui-drag-drop.html">Drag &amp; Drop</a></li>
+                                    <li class="drawer-menu-item "><a href="./ui-loaders.html">Loaders</a></li>
+                                </ul>
+                            </li>
+
+
+                            <li class="drawer-menu-item drawer-submenu">
+                                <a data-toggle="collapse" data-parent="#mainMenu" href="#" data-target="#formsMenu" aria-controls="formsMenu" aria-expanded="true">
+        <i class="material-icons">text_format</i>
+        <span class="drawer-menu-text"> Forms</span>
+      </a>
+                                <ul class="collapse show " id="formsMenu">
+                                    <li class="drawer-menu-item active "><a href="./form-controls.html">Form Controls</a></li>
+                                    <li class="drawer-menu-item "><a href="./checkboxes-radios.html">Checkboxes &amp; Radios</a></li>
+                                    <li class="drawer-menu-item "><a href="./switches-toggles.html">Switches &amp; Toggles</a></li>
+                                    <li class="drawer-menu-item "><a href="./form-layout.html">Layout Variations</a></li>
+                                    <li class="drawer-menu-item "><a href="./validation.html">Validation</a></li>
+                                    <li class="drawer-menu-item "><a href="./custom-forms.html">Custom Forms</a></li>
+                                    <li class="drawer-menu-item "><a href="./text-editor.html">Text Editor</a></li>
+                                    <li class="drawer-menu-item "><a href="./datepicker.html">Datepicker</a></li>
+                                </ul>
+                            </li>
+                            <li class="drawer-menu-item  ">
+                                <a href="./ui-tables.html">
+        <i class="material-icons">tab</i>
+        <span class="drawer-menu-text"> Tables</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item  ">
+                                <a href="./ui-notifications.html">
+        <i class="material-icons">notifications</i>
+        <span class="drawer-menu-text"> Notifications</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item  ">
+                                <a href="./charts.html">
+        <i class="material-icons">equalizer</i>
+        <span class="drawer-menu-text"> Charts</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item  ">
+                                <a href="./events-calendar.html">
+        <i class="material-icons">event_available</i>
+        <span class="drawer-menu-text"> Calendar</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item  ">
+                                <a href="./maps.html">
+        <i class="material-icons">pin_drop</i>
+        <span class="drawer-menu-text"> Maps</span>
+      </a>
+                            </li>
+                        </ul>
+
+
+                        <!-- HEADING -->
+                        <div class="py-2 drawer-heading">
+                            Pages
+                        </div>
+
+                        <!-- MENU -->
+                        <ul class="drawer-menu" id="mainMenu" data-children=".drawer-submenu">
+                            <li class="drawer-menu-item">
+                                <a href="./account.html">
+        <i class="material-icons">edit</i>
+        <span class="drawer-menu-text">Edit Account</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item">
+                                <a href="./login.html">
+        <i class="material-icons">lock</i>
+        <span class="drawer-menu-text">Login</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item">
+                                <a href="./signup.html">
+        <i class="material-icons">account_circle</i>
+        <span class="drawer-menu-text">Sign Up</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item">
+                                <a href="./forgot-password.html">
+        <i class="material-icons">help</i>
+        <span class="drawer-menu-text">Forgot Password</span>
+      </a>
+                            </li>
+                        </ul>
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- // END drawer -->
+
+        <!-- drawer -->
+        <div class="mdk-drawer js-mdk-drawer" id="user-drawer" data-position="right" data-align="end">
+            <div class="mdk-drawer__content">
+                <div class="mdk-drawer__inner" data-simplebar="" data-simplebar-force-enabled="true">
+                    <nav class="drawer drawer--light">
+                        <div class="drawer-spacer drawer-spacer-border">
+                            <div class="media align-items-center">
+                                <img src="https://pbs.twimg.com/profile_images/928893978266697728/3enwe0fO_400x400.jpg" class="img-fluid rounded-circle mr-2" width="35" alt="" />
+                                <div class="media-body">
+                                    <a href="#" class="h5 m-0">Frontted</a>
+                                    <div>Account Manager</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="drawer-spacer bg-body-bg">
+                            <div class="d-flex justify-content-between mb-2">
+                                <p class="h6 text-gray m-0"><i class="material-icons align-middle md-18 text-primary">monetization_on</i> Balance</p>
+                                <span>$21,011</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p class="h6 text-gray m-0"><i class="material-icons align-middle md-18 text-primary">shopping_cart</i> Sales</p>
+                                <span>142</span>
+                            </div>
+                        </div>
+                        <!-- MENU -->
+                        <ul class="drawer-menu" id="userMenu" data-children=".drawer-submenu">
+                            <li class="drawer-menu-item">
+                                <a href="./account.html">
+        <i class="material-icons">lock</i>
+        <span class="drawer-menu-text"> Account</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item">
+                                <a href="./profile.html">
+        <i class="material-icons">account_circle</i>
+        <span class="drawer-menu-text"> Profile</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item">
+                                <a href="./login.html">
+        <i class="material-icons">exit_to_app</i>
+        <span class="drawer-menu-text"> Logout</span>
+      </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- // END drawer -->
+
+    </div>
+    <!-- // END drawer-layout -->
+
+
+
+    <!-- jQuery -->
+    <script src="./assets/vendor/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="./assets/vendor/popper.js"></script>
+    <script src="./assets/vendor/bootstrap.min.js"></script>
+
+    <!-- Simplebar -->
+    <!-- Used for adding a custom scrollbar to the drawer -->
+    <script src="./assets/vendor/simplebar.js"></script>
+
+
+    <!-- Vendor -->
+    <script src="./assets/vendor/Chart.min.js"></script>
+    <script src="./assets/vendor/moment.min.js"></script>
+
+    <!-- APP -->
+    <script src="./assets/js/color_variables.js"></script>
+    <script src="./assets/js/app.js"></script>
+
+
+    <script src="./assets/vendor/dom-factory.js"></script>
+    <!-- DOM Factory -->
+    <script src="./assets/vendor/material-design-kit.js"></script>
+    <!-- MDK -->
+
+
+
+    <script>
+        (function() {
+            'use strict';
+            // Self Initialize DOM Factory Components
+            domFactory.handler.autoInit()
+
+
+            // Connect button(s) to drawer(s)
+            var sidebarToggle = document.querySelectorAll('[data-toggle="sidebar"]')
+
+            sidebarToggle.forEach(function(toggle) {
+                toggle.addEventListener('click', function(e) {
+                    var selector = e.currentTarget.getAttribute('data-target') || '#default-drawer'
+                    var drawer = document.querySelector(selector)
+                    if (drawer) {
+                        if (selector == '#default-drawer') {
+                            $('.container-fluid').toggleClass('container--max');
+                        }
+                        drawer.mdkDrawer.toggle();
+                    }
+                })
+            })
+        })()
+    </script>
+
+
+
+</body>
+
+</html>
