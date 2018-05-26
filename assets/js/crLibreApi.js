@@ -17,7 +17,7 @@ var DEFAULT_INIT;
 /*******************************/
 /*          Settings           */
 /*******************************/
-var api_url = "https://sapiens.ticoteccr.com/api.php";
+var api_url = "http://api-demo.crlibre.org/api.php";
 var api_front = "index.html";
 
 var api_user = "";
@@ -37,10 +37,10 @@ function crLibreApi_registerUser(userData, success, error){
         country: userData.userCountry
     };
     
-    sapiensApi_postRequest(req, 
+    crLibreApi_postRequest(req, 
         function(d){
-            sapiensApi_setLocalStorage('userName', d.resp.userName);   
-            sapiensApi_setLocalStorage('sessionKey', d.resp.sessionKey); 
+            crLibreApi_setLocalStorage('userName', d.resp.userName);   
+            crLibreApi_setLocalStorage('sessionKey', d.resp.sessionKey); 
             success(d);
         }, function(d){
             error(d);
@@ -57,11 +57,11 @@ function crLibreApi_checkLogin(success, error, timeout){
         r: "users_get_my_details"
     };
     
-    sapiensApi_postRequest(req, 
+    crLibreApi_postRequest(req, 
     function(data){
         if(data.resp != ERROR_USER_WRONG_LOGIN_INFO && data.resp != ERROR_USER_ACCESS_DENIED){
             if(success != null){
-                sapiensApi_debug("It seems we are logged in as " + data.resp.userName);
+                crLibreApi_debug("It seems we are logged in as " + data.resp.userName);
                 api_user = data.resp.userName;
                 success(data);
             }
@@ -72,13 +72,13 @@ function crLibreApi_checkLogin(success, error, timeout){
         }
     },
     function(){
-        sapiensApi_debug("Exec error func");
+        crLibreApi_debug("Exec error func");
         if(error != null){
             error();
         }
     },
     function(){
-        sapiensApi_debug("Exec callback func");
+        crLibreApi_debug("Exec callback func");
         if(timeout != null){
             timeout();
         }
@@ -117,7 +117,7 @@ function crLibreApi_login(userData, success, error){
             pwd: userData.pwd
         };
         
- sapiensApi_postRequest(req, 
+ crLibreApi_postRequest(req, 
     function(data){
         if(data.resp != ERROR_USER_WRONG_LOGIN_INFO){
             crLibreApi_setLocalStorage('userName', data.resp.userName);   
@@ -143,18 +143,18 @@ function crLibreApi_login(userData, success, error){
 /* Req request data, func success, func error*/
 /*********************************************/
 function crLibreApi_postRequest(req, success, error, timeout = 800, times = 0){
-    sapiensApi_debug("Making a post request to " + api_url);
+    crLibreApi_debug("Making a post request to " + api_url);
     /*generate the form*/
     var _data = new FormData();
     
     for (var key in req) {
         var value = req[key];
-        sapiensApi_debug("Adding " + key + " -> " + value);
+        crLibreApi_debug("Adding " + key + " -> " + value);
         _data.append(key, value);
     }   
 
-    _data.append("iam", sapiensApi_getLocalStorage('userName'));
-    _data.append("sessionKey", sapiensApi_getLocalStorage('sessionKey'));
+    _data.append("iam", crLibreApi_getLocalStorage('userName'));
+    _data.append("sessionKey", crLibreApi_getLocalStorage('sessionKey'));
 
     var oReq = new XMLHttpRequest();
     oReq.open("POST", api_url, true);
@@ -167,10 +167,10 @@ function crLibreApi_postRequest(req, success, error, timeout = 800, times = 0){
             console.log(r);
             r = JSON.parse(r);
             success(r);
-            sapiensApi_debug("Done!");
+            crLibreApi_debug("Done!");
         }else{
             var r = oReq.responseText;
-            sapiensApi_debug("There was an error");
+            crLibreApi_debug("There was an error");
             error(r);
         }
     };
@@ -178,13 +178,13 @@ function crLibreApi_postRequest(req, success, error, timeout = 800, times = 0){
     oReq.ontimeout = function(e){
         times++;
         if(times < 3){
-            sapiensApi_postRequest(req, success, error, timeout, (times++));
-            sapiensApi_debug("Timeout " + times + ", lets try again");
+            crLibreApi_postRequest(req, success, error, timeout, (times++));
+            crLibreApi_debug("Timeout " + times + ", lets try again");
         }else{
             sapiens_doSomethingAfter(function(){
-                sapiensApi_debug("Timeout does not work, retrying in a sec");
-                sapiensApi_postRequest(req, success, error, timeout, 0);
-                sapiensApi_debug("Function called...");
+                crLibreApi_debug("Timeout does not work, retrying in a sec");
+                crLibreApi_postRequest(req, success, error, timeout, 0);
+                crLibreApi_debug("Function called...");
             }, 3000);
         }
     }
