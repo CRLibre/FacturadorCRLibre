@@ -23,7 +23,6 @@ var api_front = "index.html";
 var api_user = "";
 var api_debugMode = true;
 
-
 function crLibreApi_registerUser(userData, success, error){
     
     var req = {
@@ -34,7 +33,7 @@ function crLibreApi_registerUser(userData, success, error){
         email: userData.userEmail,
         pwd: userData.pwd,
         about: "--",
-        country: userData.userCountry
+        country: "CR"
     };
     
     crLibreApi_postRequest(req, 
@@ -42,16 +41,14 @@ function crLibreApi_registerUser(userData, success, error){
             crLibreApi_setLocalStorage('userName', d.resp.userName);   
             crLibreApi_setLocalStorage('sessionKey', d.resp.sessionKey); 
             success(d);
-        }, function(d){
-            error(d);
-        });
+        }, error);
 }
 
 /*********************************************/
 /* Function to check login users             */
 /* Req success, error                        */
 /*********************************************/
-function crLibreApi_checkLogin(success, error, timeout){
+function crLibreApi_checkLogin(success, error){
     var req = {
         w: "users",
         r: "users_get_my_details"
@@ -76,14 +73,106 @@ function crLibreApi_checkLogin(success, error, timeout){
         if(error != null){
             error();
         }
-    },
-    function(){
-        crLibreApi_debug("Exec callback func");
-        if(timeout != null){
-            timeout();
-        }
     });
 }
+
+
+/**********************************************************************************************************************************/
+/**********************************************************************************************************************************/
+/**********************************************************************************************************************************/
+/**********************************************************************************************************************************/
+
+
+
+/**************************************************/
+/*Función para enviar a hacienda                  */
+/**************************************************/
+function crLibreApi_send(data, success, error){
+    
+    var req = {
+        w: "send",
+        r: "sendMensaje",
+        token: data.token,
+        clave: data.clave,
+        fecha: data.fecha,
+        emi_tipoIdentificacion: data.tipoIdentifEmisor,
+        emi_numeroIdentificacion: data.numIdentifEmisor,
+        recp_tipoIdentificacion: data.tipoIdentifRec,
+        recp_numeroIdentificacion: data.numIdentifRec,
+        consecutivoReceptor: data.consecutivo,
+        comprobanteXml: data.XML
+    };
+    crLibreApi_postRequest(req, success, error);
+}
+
+/**************************************************/
+/*Función para firmar XML                         */
+/**************************************************/
+function crLibreApi_signXML(data, success, error){
+    var req = {
+        w: "signXML",
+        r: "signFE",
+        p12Url: data.p12Url,
+        inXml: data.inXml,
+        tipodoc: data.tipodoc
+    };
+    crLibreApi_postRequest(req, success, error);
+}
+
+/**************************************************/
+/*Función para enviar a Haciena Solamente TE      */
+/**************************************************/
+function crLibreApi_sendTE(data, success, error){
+    var req = {
+        w: "send",
+        r: "send",
+        token: data.token,
+        clave: data.clave,
+        fecha: data.fecha,
+        emi_tipoIdentificacion: data.emi_tipoIdentificacion,
+        emi_numeroIdentificacion: data.emi_numeroIdentificacion,
+        comprobanteXml: data.comprobanteXml
+    };
+    crLibreApi_postRequest(req, success, error);
+}
+
+/**************************************************/
+/*Función para enviar a Haciena FA, NC, ND        */
+/**************************************************/
+function crLibreApi_send(data, success, error){
+   var req = {
+        w: "send",
+        r: "json",
+        token: data.token,
+        clave: data.clave,
+        fecha: data.fecha,
+        emi_tipoIdentificacion: data.emi_tipoIdentificacion,
+        emi_numeroIdentificacion: data.emi_numeroIdentificacion,
+        recp_tipoIdentificacion: data.recp_tipoIdentificacion,
+        recp_numeroIdentificacion: data.recp_numeroIdentificacion,
+        comprobanteXml: data.comprobanteXml
+    };
+    crLibreApi_postRequest(req, success, error);
+}
+
+/**************************************************/
+/*Función para consultar comprobantes             */
+/**************************************************/
+function crLibreApi_consultar(data, success, error){
+    var req = {
+        w: "consultar",
+        r: "consultarCom",
+        clave: data.clave,
+        token: data.token
+    };
+    crLibreApi_postRequest(req, success, error);
+}
+
+/**********************************************************************************************************************************/
+/**********************************************************************************************************************************/
+/**********************************************************************************************************************************/
+/**********************************************************************************************************************************/
+
 
 /*********************************************/
 /* Function set local storage                */
@@ -194,6 +283,5 @@ function crLibreApi_postRequest(req, success, error, timeout = 800, times = 0){
 function crLibreApi_debug(msg){
     if(api_debugMode){
         console.log("[crLibreApi] >> " + msg);
-    }
-    
+    }    
 }
