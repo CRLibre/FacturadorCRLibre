@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -20,10 +19,10 @@
         <script src="./assets/js/jquery-3.3.1.min.js"></script>
         <script src="./assets/js/crLibreFront.js"></script>
         <script src="./assets/js/crLibreApi.js"></script>
-        <script src="./assets/js/sweetalert.min.js"></script></head>
-
+        <script src="./assets/js/sweetalert.min.js"></script>
+    </head>
+    <!--inicio body-->
     <body>
-<<<<<<< HEAD
         <div class="mdk-drawer-layout js-mdk-drawer-layout" data-fullbleed="" data-push="" data-responsive-width="992px" data-has-scrolling-region="">
 
             <div class="mdk-drawer-layout__content">
@@ -74,11 +73,8 @@
                 'use strict';
                 // Self Initialize DOM Factory Components
                 domFactory.handler.autoInit()
-
-
                 // Connect button(s) to drawer(s)
                 var sidebarToggle = document.querySelectorAll('[data-toggle="sidebar"]')
-
                 sidebarToggle.forEach(function (toggle) {
                     toggle.addEventListener('click', function (e) {
                         var selector = e.currentTarget.getAttribute('data-target') || '#default-drawer'
@@ -94,83 +90,14 @@
             })()
         </script>
 
-
         <script src="./assets/vendor/morris.min.js"></script>
         <script src="./assets/vendor/raphael.min.js"></script>
         <script src="./assets/vendor/bootstrap-datepicker.min.js"></script>
         <script src="./assets/js/datepicker.js"></script>
-
-        <script>
-            $(function () {
-                window.morrisDashboardChart = new Morris.Area({
-                    element: 'morris-area-chart',
-                    data: [{
-                            year: '2017-01',
-                            a: 6352.27
-                        },
-                        {
-                            year: '2017-02',
-                            a: 4309.98
-                        },
-                        {
-                            year: '2017-03',
-                            a: 1465.98
-                        },
-                        {
-                            year: '2017-04',
-                            a: 1298.25
-                        },
-                        {
-                            year: '2017-05',
-                            a: 3209
-                        },
-                        {
-                            year: '2017-06',
-                            a: 2083
-                        },
-                        {
-                            year: '2017-07',
-                            a: 1285.23
-                        },
-                        {
-                            year: '2017-08',
-                            a: 1289
-                        },
-                        {
-                            year: '2017-09',
-                            a: 4430
-                        },
-                        {
-                            year: '2017-10',
-                            a: 8921.19
-                        }
-                    ],
-                    xkey: 'year',
-                    ykeys: ['a'],
-                    labels: ['Earnings'],
-                    lineColors: ['#fff'],
-                    fillOpacity: '0.2',
-                    gridEnabled: true,
-                    gridTextColor: '#ffffff',
-                    resize: true
-                });
-
-            });
-        </script>
-
-=======
-        <div class='crlibre_content' id="crlibre_content" onclick="queHacemos()"></div>
-		<script>
-            window.onload = function(){
-                crLibreFront_boot();
-            }
-		</script>
-        
         <!-- App sources -->
         <script src="src/tools/jquery/jquery.min.js"></script>
 		<script src="src/crLibreApi.js"></script>
 		<script src="src/crLibreFront.js"></script>
->>>>>>> b16f8268c352d1bc43c20cfdeb1033f927cc6be3
 
     </body>
 
