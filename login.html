@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Hero</title>
+
+
+    <!-- Prevent the demo from appearing in search engines -->
+    <meta name="robots" content="noindex" />
+	<!-- Import de Js -->
+	<script src="./assets/js/jquery-3.3.1.min.js"></script>
+    <script src="./assets/js/crLibreFront.js"></script>
+    <script src="./assets/js/crLibreApi.js"></script>
+    <script src="./assets/js/sweetalert.min.js"></script>
+
+    <!-- App CSS -->
+    <link type="text/css" href="./assets/css/app.css" rel="stylesheet" />
+    <link type="text/css" href="./assets/css/app.rtl.css" rel="stylesheet" />
+    <link type="text/css" href="./assets/css/sweetalert.css" rel="stylesheet" />
+
+    <!-- Simplebar -->
+    <link type="text/css" href="./assets/vendor/simplebar.css" rel="stylesheet" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+
+<body>
+    <div class="mdk-drawer-layout js-mdk-drawer-layout" data-fullbleed="" data-push="" data-has-scrolling-region="">
+        <div class="mdk-drawer-layout__content mdk-header-layout__content--scrollable" style="overflow-y: auto;" data-simplebar="" data-simplebar-force-enabled="true">
+
+
+            <div class="container h-vh d-flex justify-content-center align-items-center flex-column">
+                <div class="d-flex justify-content-center align-items-center mb-3">
+                    <a href="./index.html" class="drawer-brand-circle mr-2">H</a>
+                    <h2 class="ml-2 text-bg mb-0"><strong>Hero PRO</strong></h2>
+                </div>
+                <div class="row w-100 justify-content-center">
+                    <div class="card card-login mb-3">
+                        <div class="card-body">
+                            <form action="index.html" method="get" />
+                                <div class="form-group">
+                                    <label>Username</label>
+
+                                    <div class="input-group input-group--inline">
+                                        <div class="input-group-addon">
+                                            <i class="material-icons">account_circle</i>
+                                        </div>
+                                        <input type="text" id="username" class="form-control" name="username" value="" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="d-flex">
+                                        <label>Password</label>
+                                        <span class="ml-auto"><a href="./forgot-password.html">Forgot password?</a></span>
+                                    </div>
+
+                                    <div class="input-group input-group--inline">
+                                        <div class="input-group-addon">
+                                            <i class="material-icons">lock_outline</i>
+                                        </div>
+                                        <input type="password" id="password" class="form-control" name="password" value="" />
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <a onclick="crLibreApi_logIn_call();" class="btn btn-primary">Ingresar</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                    <span class="mr-2">Don't have an account?</span>
+                    <a href="./signup.html">Sign Up</a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            'use strict';
+
+            // Self Initialize DOM Factory Components
+            domFactory.handler.autoInit();
+        });
+    </script>
+</body>
+
+</html>

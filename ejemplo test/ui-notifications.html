@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Hero</title>
+
+
+    <!-- Prevent the demo from appearing in search engines -->
+    <meta name="robots" content="noindex" />
+
+    <!-- App CSS -->
+    <link type="text/css" href="./assets/css/app.css" rel="stylesheet" />
+    <link type="text/css" href="./assets/css/app.rtl.css" rel="stylesheet" />
+
+    <!-- Simplebar -->
+    <link type="text/css" href="./assets/vendor/simplebar.css" rel="stylesheet" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+
+<body>
+    <div class="mdk-drawer-layout js-mdk-drawer-layout" data-fullbleed="" data-push="" data-responsive-width="992px" data-has-scrolling-region="">
+
+        <div class="mdk-drawer-layout__content">
+            <!-- header-layout -->
+            <div class="mdk-header-layout js-mdk-header-layout  mdk-header--fixed  mdk-header-layout__content--scrollable">
+                <!-- header -->
+                <div class="mdk-header js-mdk-header bg-primary" data-fixed="">
+                    <div class="mdk-header__content">
+
+                        <nav class="navbar navbar-expand-md navbar-dark bg-primary d-flex-none">
+                            <button class="btn btn-link text-white pl-0" type="button" data-toggle="sidebar">
+    <i class="material-icons align-middle md-36">short_text</i>
+  </button>
+                            <div class="page-title m-0">UI Notifications</div>
+
+                            <div class="collapse navbar-collapse" id="mainNavbar">
+                                <ul class="navbar-nav ml-auto align-items-center">
+                                    <li class="nav-item nav-link">
+                                        <div class="form-group m-0">
+                                            <div class="input-group input-group--inline">
+                                                <div class="input-group-addon">
+                                                    <i class="material-icons">search</i>
+                                                </div>
+                                                <input type="text" class="form-control" name="search" placeholder="Search app.." />
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown nav-language d-flex align-items-center">
+                                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+          EN
+        </a>
+                                        <div class="dropdown-menu dropdown-menu-right ">
+                                            <ul class="list-unstyled">
+                                                <li>
+                                                    <a href="./account.html" class="dropdown-item active">
+                <img src="../../../flags.fmcdn.net/data/flags/w1160/us.png" style="width: 25px; vertical-align: middle" alt="English" /> English
+              </a>
+                                                </li>
+                                                <li>
+                                                    <a href="./account.html" class="dropdown-item">
+                <img src="../../../flags.fmcdn.net/data/flags/w1160/fr.png" style="width: 25px; vertical-align: middle" alt="French" /> French
+              </a>
+                                                </li>
+                                                <li>
+                                                    <a href="./account.html" class="dropdown-item">
+                <img src="../../../flags.fmcdn.net/data/flags/w1160/de.png" style="width: 25px; vertical-align: middle" alt="English" /> German
+              </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown notifications d-flex align-self-center align-items-center" id="navbarNotifications">
+                                        <a href="#" class="nav-link dropdown-toggle notifications--active" data-toggle="dropdown" aria-expanded="false">
+          <i class="material-icons align-middle">notifications</i>
+        </a>
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notificationsDropdown" id="notificationsDropdown">
+                                            <ul class="nav nav-tabs-notifications d-flex px-0" id="notifications-ul" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" id="notifications-tab" data-toggle="tab" href="#notifications" role="tab" aria-controls="notifications" aria-selected="true">Notifications</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="alerts-tab" data-toggle="tab" href="#alerts" role="tab" aria-controls="alerts" aria-selected="false">Alerts</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Messages</a>
+                                                </li>
+                                            </ul>
+                                            <div class="tab-content" id="notifications-tabs">
+                                                <div class="tab-pane fade show active" id="notifications" role="tabpanel" aria-labelledby="notifications-tab">
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item">
+                                                            <div class="w-100">
+                                                                <a href="#">john</a> received a new quote</div>
+                                                            <div class="w-100 text-muted">4 secs ago</div>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <div class="w-100">
+                                                                <a href="#">karen</a> received a new quote</div>
+                                                            <div class="w-100 text-muted">25 mins ago</div>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <div class="w-100">
+                                                                <a href="#">jim</a> received a new quote</div>
+                                                            <div class="w-100 text-muted">7 hrs ago</div>
+                                                        </li>
+                                                        <li class="list-group-item text-right">
+                                                            <a href="#">
+                    <span class="align-middle">View All</span>
+                    <i class="material-icons md-18 align-middle">arrow_forward</i>
+                  </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="tab-pane fade" id="alerts" role="tabpanel" aria-labelledby="alerts-tab">
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item">
+                                                            <div class="media align-items-center">
+                                                                <i class="material-icons align-middle mr-2 text-warning">
+                      info_outline
+                    </i>
+                                                                <div class="media-body">
+                                                                    <div class="w-100">
+                                                                        <a href="./profile.html">john</a> received a new
+                                                                        <a href="#">quote</a>
+                                                                    </div>
+                                                                    <div class="w-100 text-muted">4 secs ago</div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <div class="media align-items-center">
+                                                                <i class="material-icons align-middle mr-2 text-success">
+                      check_circle
+                    </i>
+                                                                <div class="media-body">
+                                                                    <div class="w-100">
+                                                                        <a href="./profile.html">karen</a> completed a
+                                                                        <a href="#">task</a>
+                                                                    </div>
+                                                                    <div class="w-100 text-muted">25 mins ago</div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <div class="media align-items-center">
+                                                                <i class="material-icons align-middle mr-2 text-danger">
+                      warning
+                    </i>
+                                                                <div class="media-body">
+                                                                    <div class="w-100">
+                                                                        <a href="./profile.html">jim</a> removed a
+                                                                        <a href="#">task</a>
+                                                                    </div>
+                                                                    <div class="w-100 text-muted">7 hrs ago</div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item text-right">
+                                                            <a href="#">
+                    <span class="align-middle">View All</span>
+                    <i class="material-icons md-18 align-middle">arrow_forward</i>
+                  </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="tab-pane fade" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item">
+                                                            <div class="media align-items-center">
+                                                                <a href="./profile.html">
+                      <img src="./assets/images/avatars/person-1.jpg" class="img-fluid rounded-circle mr-2" width="35" alt="" />
+                    </a>
+                                                                <div class="media-body">
+                                                                    <div class="w-100">I started that project we talked...</div>
+                                                                    <div class="w-100 text-muted">4 secs ago</div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <div class="media align-items-center">
+                                                                <a href="./profile.html">
+                      <img src="./assets/images/avatars/person-11.jpg" class="img-fluid rounded-circle mr-2" width="35" alt="" />
+                    </a>
+                                                                <div class="media-body">
+                                                                    <div class="w-100">Can we arrange a meeting?...</div>
+                                                                    <div class="w-100 text-muted">25 mins ago</div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <div class="media align-items-center">
+                                                                <a href="./profile.html">
+                      <img src="./assets/images/avatars/person-12.jpg" class="img-fluid rounded-circle mr-2" width="35" alt="" />
+                    </a>
+                                                                <div class="media-body">
+                                                                    <div class="w-100">We need to fix some bugs...</div>
+                                                                    <div class="w-100 text-muted">7 hrs ago</div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item text-right">
+                                                            <a href="#">
+                    <span class="align-middle">View All</span>
+                    <i class="material-icons md-18 align-middle">arrow_forward</i>
+                  </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item nav-divider">
+                                        </li><li class="nav-item">
+                                            <a href="#" class="nav-link dropdown-toggle dropdown-clear-caret" data-toggle="sidebar" data-target="#user-drawer">
+          Frontted
+          <img src="https://pbs.twimg.com/profile_images/928893978266697728/3enwe0fO_400x400.jpg" class="img-fluid rounded-circle ml-1" width="35" alt="" />
+        </a>
+                                        </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- content -->
+                <div class="mdk-header-layout__content ls-top-navbar mdk-header-layout__content--scrollable h-100">
+                    <!-- main content -->
+                    <div class="container-fluid">
+                        <h2>Notifications</h2>
+                        <p class="lead">
+                            Custom styled notifications.
+                        </p>
+                        <hr class="page-section" />
+                        <h4 class="page-section">Alerts</h4>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="alert alert-primary alert-dismissable fade show" role="alert">
+                                    This is a primary alert—check it out!
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                                </div>
+                                <div class="alert alert-secondary alert-dismissable fade show" role="alert">
+                                    This is a secondary alert—check it out!
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    This is a success alert—check it out!
+                                </div>
+                                <div class="alert alert-danger" role="alert">
+                                    This is a danger alert—check it out!
+                                </div>
+                                <div class="alert alert-warning" role="alert">
+                                    This is a warning alert—check it out!
+                                </div>
+                                <div class="alert alert-info" role="alert">
+                                    This is a info alert—check it out!
+                                </div>
+                                <div class="alert alert-light" role="alert">
+                                    This is a light alert—check it out!
+                                </div>
+                                <div class="alert alert-dark" role="alert">
+                                    This is a dark alert—check it out!
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="page-section">
+                            Modals
+                        </h4>
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">
+                                    Default
+                                </h4>
+                            </div>
+                            <div class="card-body">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#defaultModal">
+        Launch demo modal
+      </button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">
+                                    Tooltips and popovers
+                                </h4>
+                            </div>
+                            <div class="card-body">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popoverModal">
+        Launch demo modal
+      </button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">
+                                    Small modal
+                                </h4>
+                            </div>
+                            <div class="card-body">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#smallModal">
+        Launch demo modal
+      </button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">
+                                    Large modal
+                                </h4>
+                            </div>
+                            <div class="card-body">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#largeModal">
+        Launch demo modal
+      </button>
+                            </div>
+                        </div>
+                        <h4 class="page-section">
+                            Snackbar
+                        </h4>
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Default</h4>
+                            </div>
+                            <div class="card-body">
+                                <button class="btn btn-primary" id="default-snackbar">Notify</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">
+                                    Start aligned
+                                </h4>
+                            </div>
+                            <div class="card-body">
+                                <button class="btn btn-primary" id="start-snackbar">Notify</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">
+                                    Right aligned
+                                </h4>
+                            </div>
+                            <div class="card-body">
+                                <button class="btn btn-primary" id="start-snackbar-rtl">Notify</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- // END drawer-layout__content -->
+
+        <!-- drawer -->
+        <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
+            <div class="mdk-drawer__content">
+                <div class="mdk-drawer__inner" data-simplebar="" data-simplebar-force-enabled="true">
+
+                    <nav class="drawer  drawer--dark">
+                        <div class="drawer-spacer">
+                            <div class="media align-items-center">
+                                <a href="./index.html" class="drawer-brand-circle mr-2">H</a>
+                                <div class="media-body">
+                                    <a href="./index.html" class="h5 m-0 text-link">Hero Pro - Admin</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- HEADING -->
+                        <div class="py-2 drawer-heading">
+                            Dashboards
+                        </div>
+                        <!-- MENU -->
+                        <ul class="drawer-menu" id="dasboardMenu" data-children=".drawer-submenu">
+                            <li class="drawer-menu-item ">
+                                <a href="./index.html">
+        <i class="material-icons">poll</i>
+        <span class="drawer-menu-text"> Financial</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item">
+                                <a href="./projects.html">
+        <i class="material-icons">dns</i>
+        <span class="drawer-menu-text"> Projects/Tickets</span>
+        <span class="badge badge-pill badge-success ml-1">4</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item ">
+                                <a href="./retail.html">
+        <i class="material-icons">store</i>
+        <span class="drawer-menu-text"> E-Commerce</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item ">
+                                <a href="./real-estate-grid.html">
+        <i class="material-icons">business</i>
+        <span class="drawer-menu-text"> Real Estate</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item ">
+                                <a href="./profile.html">
+        <i class="material-icons">pages</i>
+        <span class="drawer-menu-text"> Social</span>
+      </a>
+                            </li>
+                        </ul>
+
+                        <!-- HEADING -->
+                        <div class="py-2 drawer-heading">
+                            Components
+                        </div>
+
+                        <!-- MENU -->
+                        <ul class="drawer-menu" id="mainMenu" data-children=".drawer-submenu">
+                            <li class="drawer-menu-item drawer-submenu">
+                                <a data-toggle="collapse" data-parent="#mainMenu" href="#" data-target="#uiComponentsMenu" aria-controls="uiComponentsMenu" aria-expanded="false" class="collapsed">
+        <i class="material-icons">library_books</i>
+        <span class="drawer-menu-text"> UI Components</span>
+      </a>
+                                <ul class="collapse " id="uiComponentsMenu">
+                                    <li class="drawer-menu-item "><a href="./ui-buttons.html">Buttons</a></li>
+                                    <li class="drawer-menu-item "><a href="./ui-colors.html">Colors</a></li>
+                                    <li class="drawer-menu-item "><a href="./ui-grid.html">Grid</a></li>
+                                    <li class="drawer-menu-item "><a href="./ui-icons.html">Icons</a></li>
+                                    <li class="drawer-menu-item "><a href="./ui-typography.html">Typography</a></li>
+                                    <li class="drawer-menu-item "><a href="./ui-drag-drop.html">Drag &amp; Drop</a></li>
+                                    <li class="drawer-menu-item "><a href="./ui-loaders.html">Loaders</a></li>
+                                </ul>
+                            </li>
+
+
+                            <li class="drawer-menu-item drawer-submenu">
+                                <a data-toggle="collapse" data-parent="#mainMenu" href="#" data-target="#formsMenu" aria-controls="formsMenu" aria-expanded="false" class="collapsed">
+        <i class="material-icons">text_format</i>
+        <span class="drawer-menu-text"> Forms</span>
+      </a>
+                                <ul class="collapse " id="formsMenu">
+                                    <li class="drawer-menu-item "><a href="./form-controls.html">Form Controls</a></li>
+                                    <li class="drawer-menu-item "><a href="./checkboxes-radios.html">Checkboxes &amp; Radios</a></li>
+                                    <li class="drawer-menu-item "><a href="./switches-toggles.html">Switches &amp; Toggles</a></li>
+                                    <li class="drawer-menu-item "><a href="./form-layout.html">Layout Variations</a></li>
+                                    <li class="drawer-menu-item "><a href="./validation.html">Validation</a></li>
+                                    <li class="drawer-menu-item "><a href="./custom-forms.html">Custom Forms</a></li>
+                                    <li class="drawer-menu-item "><a href="./text-editor.html">Text Editor</a></li>
+                                    <li class="drawer-menu-item "><a href="./datepicker.html">Datepicker</a></li>
+                                </ul>
+                            </li>
+                            <li class="drawer-menu-item  ">
+                                <a href="./ui-tables.html">
+        <i class="material-icons">tab</i>
+        <span class="drawer-menu-text"> Tables</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item  active ">
+                                <a href="./ui-notifications.html">
+        <i class="material-icons">notifications</i>
+        <span class="drawer-menu-text"> Notifications</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item  ">
+                                <a href="./charts.html">
+        <i class="material-icons">equalizer</i>
+        <span class="drawer-menu-text"> Charts</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item  ">
+                                <a href="./events-calendar.html">
+        <i class="material-icons">event_available</i>
+        <span class="drawer-menu-text"> Calendar</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item  ">
+                                <a href="./maps.html">
+        <i class="material-icons">pin_drop</i>
+        <span class="drawer-menu-text"> Maps</span>
+      </a>
+                            </li>
+                        </ul>
+
+
+                        <!-- HEADING -->
+                        <div class="py-2 drawer-heading">
+                            Pages
+                        </div>
+
+                        <!-- MENU -->
+                        <ul class="drawer-menu" id="mainMenu" data-children=".drawer-submenu">
+                            <li class="drawer-menu-item">
+                                <a href="./account.html">
+        <i class="material-icons">edit</i>
+        <span class="drawer-menu-text">Edit Account</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item">
+                                <a href="./login.html">
+        <i class="material-icons">lock</i>
+        <span class="drawer-menu-text">Login</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item">
+                                <a href="./signup.html">
+        <i class="material-icons">account_circle</i>
+        <span class="drawer-menu-text">Sign Up</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item">
+                                <a href="./forgot-password.html">
+        <i class="material-icons">help</i>
+        <span class="drawer-menu-text">Forgot Password</span>
+      </a>
+                            </li>
+                        </ul>
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- // END drawer -->
+
+        <!-- drawer -->
+        <div class="mdk-drawer js-mdk-drawer" id="user-drawer" data-position="right" data-align="end">
+            <div class="mdk-drawer__content">
+                <div class="mdk-drawer__inner" data-simplebar="" data-simplebar-force-enabled="true">
+                    <nav class="drawer drawer--light">
+                        <div class="drawer-spacer drawer-spacer-border">
+                            <div class="media align-items-center">
+                                <img src="https://pbs.twimg.com/profile_images/928893978266697728/3enwe0fO_400x400.jpg" class="img-fluid rounded-circle mr-2" width="35" alt="" />
+                                <div class="media-body">
+                                    <a href="#" class="h5 m-0">Frontted</a>
+                                    <div>Account Manager</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="drawer-spacer bg-body-bg">
+                            <div class="d-flex justify-content-between mb-2">
+                                <p class="h6 text-gray m-0"><i class="material-icons align-middle md-18 text-primary">monetization_on</i> Balance</p>
+                                <span>$21,011</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p class="h6 text-gray m-0"><i class="material-icons align-middle md-18 text-primary">shopping_cart</i> Sales</p>
+                                <span>142</span>
+                            </div>
+                        </div>
+                        <!-- MENU -->
+                        <ul class="drawer-menu" id="userMenu" data-children=".drawer-submenu">
+                            <li class="drawer-menu-item">
+                                <a href="./account.html">
+        <i class="material-icons">lock</i>
+        <span class="drawer-menu-text"> Account</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item">
+                                <a href="./profile.html">
+        <i class="material-icons">account_circle</i>
+        <span class="drawer-menu-text"> Profile</span>
+      </a>
+                            </li>
+                            <li class="drawer-menu-item">
+                                <a href="./login.html">
+        <i class="material-icons">exit_to_app</i>
+        <span class="drawer-menu-text"> Logout</span>
+      </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- // END drawer -->
+
+    </div>
+    <!-- // END drawer-layout -->
+
+
+
+    <!-- jQuery -->
+    <script src="./assets/vendor/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="./assets/vendor/popper.js"></script>
+    <script src="./assets/vendor/bootstrap.min.js"></script>
+
+    <!-- Simplebar -->
+    <!-- Used for adding a custom scrollbar to the drawer -->
+    <script src="./assets/vendor/simplebar.js"></script>
+
+
+    <!-- Vendor -->
+    <script src="./assets/vendor/Chart.min.js"></script>
+    <script src="./assets/vendor/moment.min.js"></script>
+
+    <!-- APP -->
+    <script src="./assets/js/color_variables.js"></script>
+    <script src="./assets/js/app.js"></script>
+
+
+    <script src="./assets/vendor/dom-factory.js"></script>
+    <!-- DOM Factory -->
+    <script src="./assets/vendor/material-design-kit.js"></script>
+    <!-- MDK -->
+
+
+
+    <script>
+        (function() {
+            'use strict';
+            // Self Initialize DOM Factory Components
+            domFactory.handler.autoInit()
+
+
+            // Connect button(s) to drawer(s)
+            var sidebarToggle = document.querySelectorAll('[data-toggle="sidebar"]')
+
+            sidebarToggle.forEach(function(toggle) {
+                toggle.addEventListener('click', function(e) {
+                    var selector = e.currentTarget.getAttribute('data-target') || '#default-drawer'
+                    var drawer = document.querySelector(selector)
+                    if (drawer) {
+                        if (selector == '#default-drawer') {
+                            $('.container-fluid').toggleClass('container--max');
+                        }
+                        drawer.mdkDrawer.toggle();
+                    }
+                })
+            })
+        })()
+    </script>
+
+
+    <div class="modal fade" id="defaultModal" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="defaultModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="smallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="smallModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="largeModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="popoverModal" tabindex="-1" role="dialog" aria-labelledby="popoverModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="popoverModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Popover in a modal</h5>
+                    <p>This <a href="#" role="button" class="btn btn-white" data-toggle="popover" title="Popover title" data-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua.">button</a> triggers a popover on click.</p>
+                    <hr />
+                    <h5>Tooltips in a modal</h5>
+                    <p><a href="#" data-toggle="tooltip" data-placement="top" title="Top Tooltip">This link</a> and <a href="#" data-toggle="tooltip" data-placement="bottom" title="Bottom Tooltip">that link</a> have tooltips on hover.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Snackbar Default -->
+    <div class="mdc-snackbar" id="mdc-align-start-rtl-js-snackbar" aria-live="assertive" aria-atomic="true" aria-hidden="true" id="default">
+        <div class="mdc-snackbar__text"></div>
+        <div class="mdc-snackbar__action-wrapper">
+            <button type="button" class="mdc-snackbar__action-button"></button>
+        </div>
+    </div>
+    <!-- Snackbar Start Aligned -->
+    <div class="mdc-snackbar mdc-snackbar--align-start" aria-live="assertive" aria-atomic="true" aria-hidden="true" id="start">
+        <div class="mdc-snackbar__text"></div>
+        <div class="mdc-snackbar__action-wrapper">
+            <button type="button" class="mdc-snackbar__action-button"></button>
+        </div>
+    </div>
+    <!-- Snackbar Right Aligned -->
+    <div class="mdc-snackbar mdc-snackbar--align-start mdc-snackbar--right" aria-live="assertive" aria-atomic="true" aria-hidden="true">
+        <div class="mdc-snackbar__text"></div>
+        <div class="mdc-snackbar__action-wrapper">
+            <button type="button" class="mdc-snackbar__action-button"></button>
+        </div>
+    </div>
+
+    <script src="./assets/js/snackbar.js"></script>
+
+
+</body>
+
+</html>

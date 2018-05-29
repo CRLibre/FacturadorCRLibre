@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Hero</title>
+        <!-- Prevent the demo from appearing in search engines -->
+        <meta name="robots" content="noindex" />
+        <!-- App CSS -->
+        <link type="text/css" href="./assets/css/app.css" rel="stylesheet" />
+        <link type="text/css" href="./assets/css/app.rtl.css" rel="stylesheet" />
+        <link type="text/css" href="./assets/css/sweetalert.css" rel="stylesheet" />
+        <!-- Simplebar -->
+        <link type="text/css" href="./assets/vendor/simplebar.css" rel="stylesheet" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- Import de Js -->
+        <script src="./assets/js/jquery-3.3.1.min.js"></script>
+        <script src="./assets/js/crLibreFront.js"></script>
+        <script src="./assets/js/crLibreApi.js"></script>
+        <script src="./assets/js/sweetalert.min.js"></script>
+    </head>
+    <body>
+        <div class="mdk-drawer-layout js-mdk-drawer-layout" data-fullbleed="" data-push="" data-responsive-width="992px" data-has-scrolling-region="">
+            <div class="mdk-drawer-layout__content">
+                <!-- header-layout -->
+                <div class="mdk-header-layout js-mdk-header-layout  mdk-header--fixed  mdk-header-layout__content--scrollable">
+                    <!-- header -->
+                    <div class="mdk-header js-mdk-header bg-primary" data-fixed="">
+                        <div class="mdk-header__content">
+                            <nav class="navbar navbar-expand-md navbar-dark bg-primary d-flex-none">
+                                <button class="btn btn-link text-white pl-0" type="button" data-toggle="sidebar">
+                                    <i class="material-icons align-middle md-36">short_text</i>
+                                </button>
+                                <div class="page-title m-0">Subir Certificado</div>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <!-- content -->
+                    <div class="mdk-header-layout__content ls-top-navbar mdk-header-layout__content--scrollable h-100">
+                        <!-- main content -->
+                        <div class="container-fluid">
+                            <h2>Certificado de Hacienda</h2>
+                            <p class="lead">
+                                En esta seccion debe de subir el certificado de Hacinda, puede ser de Produccion o de Sambox.
+                                Se debe especificar en la seccion correspondiente.
+                            </p>
+                            <hr />
+                            <div class="card">
+
+                                <div class="card-body">
+                                    <form />
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Favor, adjuntar el certificado .p12</label>
+                                        <input type='file' class='form-control-file' id="fileToUpload"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Seleccione el hambiente</label>
+                                        <select class="form-control">
+                                            <option value="api-prod" selected>Sandbox</option> 
+                                            <option value="api-stag">Produccion</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="button" onclick="crLibreApi_certiUp_call();" class="btn btn-primary" value="Subir"></input>
+                                    </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- // END drawer-layout__content -->
+
+            <!-- drawer -->
+            <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
+
+            </div>
+        </div>
+        <!-- // END drawer-layout -->
+
+
+
+        <!-- jQuery -->
+        <script src="./assets/vendor/jquery.min.js"></script>
+
+        <!-- Bootstrap -->
+        <script src="./assets/vendor/popper.js"></script>
+        <script src="./assets/vendor/bootstrap.min.js"></script>
+
+        <!-- Simplebar -->
+        <!-- Used for adding a custom scrollbar to the drawer -->
+        <script src="./assets/vendor/simplebar.js"></script>
+
+
+        <!-- Vendor -->
+        <script src="./assets/vendor/Chart.min.js"></script>
+        <script src="./assets/vendor/moment.min.js"></script>
+
+        <!-- APP -->
+        <script src="./assets/js/color_variables.js"></script>
+        <script src="./assets/js/app.js"></script>
+
+
+        <script src="./assets/vendor/dom-factory.js"></script>
+        <!-- DOM Factory -->
+        <script src="./assets/vendor/material-design-kit.js"></script>
+        <!-- MDK -->
+
+
+
+        <script>
+                                            addmenu();
+                                            (function () {
+                                                'use strict';
+                                                // Self Initialize DOM Factory Components
+                                                domFactory.handler.autoInit()
+
+
+                                                // Connect button(s) to drawer(s)
+                                                var sidebarToggle = document.querySelectorAll('[data-toggle="sidebar"]')
+
+                                                sidebarToggle.forEach(function (toggle) {
+                                                    toggle.addEventListener('click', function (e) {
+                                                        var selector = e.currentTarget.getAttribute('data-target') || '#default-drawer'
+                                                        var drawer = document.querySelector(selector)
+                                                        if (drawer) {
+                                                            if (selector == '#default-drawer') {
+                                                                $('.container-fluid').toggleClass('container--max');
+                                                            }
+                                                            drawer.mdkDrawer.toggle();
+                                                        }
+                                                    })
+                                                })
+                                            })()
+        </script>
+
+
+
+    </body>
+
+</html>
