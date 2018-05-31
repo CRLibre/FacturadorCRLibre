@@ -21,12 +21,14 @@
         <!-- Simplebar -->
         <link type="text/css" href="./assets/vendor/simplebar.css" rel="stylesheet" />
 
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script src="./assets/js/jquery-3.3.1.min.js"></script>
+        <script src="./assets/js/crLibreFront.js"></script>
+        <script src="./assets/js/crLibreApi.js"></script>
+        <script src="./assets/js/sweetalert.min.js"></script>
+    </head>
     <!-- Import de Js -->
-    <script src="./assets/js/jquery-3.3.1.min.js"></script>
-    <script src="./assets/js/crLibreFront.js"></script>
-    <script src="./assets/js/crLibreApi.js"></script>
-    <script src="./assets/js/sweetalert.min.js"></script>
+
 
     <body>
         <div class="mdk-drawer-layout js-mdk-drawer-layout" data-fullbleed="" data-push="" data-responsive-width="992px" data-has-scrolling-region="">
@@ -136,11 +138,12 @@
                                                 <th>Precio Unitario</th>
                                                 <th>Descuento</th>
                                                 <th>I.V</th>
+                                                <th>SubTotal</th>
                                                 <th>Precio Total</th>
                                                 <th class="text-right">Action</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="tabla">
+                                        <tbody id="tabla" >
 
 
                                         </tbody>
@@ -152,12 +155,10 @@
                                         <td class="align-middle"></td>
                                         <td class="align-middle"></td>
                                         <td class="align-middle"></td>
+                                        <td class="align-middle"></td>
                                         <td class="align-middle text-right">
                                             <button onclick="addRow();" class="btn btn-success btn-sm " data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Agregar">
                                                 <i class="material-icons md-12 align-middle">add</i>
-                                            </button>
-                                            <button onclick="crLibreApi_formUpdate()" class="btn btn-success btn-sm " data-toggle="tooltip" data-placement="bottom" title="" data-original-title="sumar">
-                                                <i class="material-icons md-12 align-middle">refresh</i>
                                             </button>
                                         </td>
 
@@ -179,25 +180,25 @@
                                             <ul class="list-unstyled">
                                                 <li>
                                                     <div >Cantidad de productos</div>
-                                                    <div><input disable type="text" id="cantidad" class="form-control"  placeholder=""></div>
+                                                    <div><input value="0" readonly type="text" id="cantidad" class="form-control"  placeholder=""></div>
                                                 </li>                                                
                                                 <li>
                                                     <div>Subtotal</div>
-                                                    <div><input disable type="text" id="subTotal" class="form-control"  placeholder=""></div>
+                                                    <div><input value="0" readonly type="text" id="subTotal" class="form-control"  placeholder=""></div>
                                                 </li>
                                                 <li>
                                                     <div>Descuento Total</div>
-                                                    <div><input disable type="text" id="descuenteTotal" class="form-control"  placeholder=""></div>
+                                                    <div><input value="0" readonly type="text" id="descuenteTotal" class="form-control"  placeholder=""></div>
                                                 </li>
                                                 <li>
                                                     <div>Impuesto Total</div>
-                                                    <div><input disable type="text" id="impuestoTotal" class="form-control"  placeholder=""></div>
+                                                    <div><input value="0" readonly type="text" id="impuestoTotal" class="form-control"  placeholder=""></div>
                                                 </li>
                                             </ul>
                                             <hr />
                                             <div class="d-flex align-items-center justify-content-between">
                                                 <strong>Total:</strong>
-                                                <strong><input disable type="text" id="total" class="form-control"  placeholder=""></strong>
+                                                <strong><input value="0" readonly type="text" id="total" class="form-control"  placeholder=""></strong>
                                             </div>
 
                                             <div class="form-group">
@@ -211,7 +212,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
             <!-- drawer -->
             <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
