@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Facturador</title>
+        <!-- Prevent the demo from appearing in search engines -->
+        <meta name="robots" content="noindex" />
+        <!-- App CSS -->
+        <link type="text/css" href="../assets/css/app.css" rel="stylesheet" />
+        <link type="text/css" href="../assets/css/app.rtl.css" rel="stylesheet" />
+        <link type="text/css" href="../assets/css/sweetalert.css" rel="stylesheet" />
+        <!-- Simplebar -->
+        <link type="text/css" href="../assets/vendor/simplebar.css" rel="stylesheet" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- Import de Js -->
+        <script src="../assets/js/jquery-3.3.1.min.js"></script>
+        <script src="../assets/js/crLibreFront.js"></script>
+        <script src="../assets/js/crLibreApi.js"></script>
+        <script src="../assets/js/sweetalert.min.js"></script>
+    </head>
+    <body>
+        <div class="mdk-drawer-layout js-mdk-drawer-layout" data-fullbleed="" data-push="" data-responsive-width="992px" data-has-scrolling-region="">
+            <div class="mdk-drawer-layout__content">
+                <!-- header-layout -->
+                <div class="mdk-header-layout js-mdk-header-layout  mdk-header--fixed  mdk-header-layout__content--scrollable">
+                    <!-- header -->
+                    <div class="mdk-header js-mdk-header bg-primary" data-fixed="">
+                        <div class="mdk-header__content">
+                            <nav class="navbar navbar-expand-md navbar-dark bg-primary d-flex-none">
+                                <button class="btn btn-link text-white pl-0" type="button" data-toggle="sidebar">
+                                    <i class="material-icons align-middle md-36">short_text</i>
+                                </button>
+                                <div class="page-title m-0">Configuracion</div>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <!-- content -->
+                    <div class="mdk-header-layout__content ls-top-navbar mdk-header-layout__content--scrollable h-100">
+                        <!-- main content -->
+                        <div class="container-fluid">
+                            <h2>Lista de usuarios</h2>
+
+                            <hr />
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">
+                                        Todos los usuarios
+                                    </h4>
+                                </div>
+                                <div class="py-4">
+                                     <div class="col-auto">
+                                        <p>
+                                            Agregar : <button value="1" onclick="location.href='mh_nuevo_usuario.html';" class="btn btn-success btn-sm " data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Agregar"><i class="material-icons md-12 align-middle">add</i></button>
+                                        </p>
+
+                                    </div>
+                                    <hr>
+                                    <div class="table-responsive">
+                                        <table id="data-table" class="table table-striped table-bordered" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nombre de Usuario</th>
+                                                    <th>Correo</th>
+                                                    <th>Pais</th>
+                                                    <th>Nombre Terminal</th>
+                                                    <th>Terminal</th>
+                                                    <th>Nombre Sucursal</th>
+                                                    <th>Sucursal</th>
+                                                    <th>Accion</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tableBody">
+
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>Nombre de Usuario</th>
+                                                    <th>Correo</th>
+                                                    <th>Pais</th>
+                                                    <th>Nombre Terminal</th>
+                                                    <th>Terminal</th>
+                                                    <th>Nombre Sucursal</th>
+                                                    <th>Sucursal</th>
+                                                    <th>Accion</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- // END drawer-layout__content -->
+
+            <!-- drawer -->
+            <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
+
+            </div>
+            <!-- // END drawer -->
+
+            <!-- drawer -->
+            <div class="mdk-drawer js-mdk-drawer" id="user-drawer" data-position="right" data-align="end">
+                <div class="mdk-drawer__content">
+                    <div class="mdk-drawer__inner" data-simplebar="" data-simplebar-force-enabled="true">
+                        <nav class="drawer drawer--light">
+                            <div class="drawer-spacer drawer-spacer-border">
+                                <div class="media align-items-center">
+                                    <img src="https://pbs.twimg.com/profile_images/928893978266697728/3enwe0fO_400x400.jpg" class="img-fluid rounded-circle mr-2" width="35" alt="" />
+                                    <div class="media-body">
+                                        <a href="#" class="h5 m-0">Frontted</a>
+                                        <div>Account Manager</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="drawer-spacer bg-body-bg">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <p class="h6 text-gray m-0"><i class="material-icons align-middle md-18 text-primary">monetization_on</i> Balance</p>
+                                    <span>$21,011</span>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <p class="h6 text-gray m-0"><i class="material-icons align-middle md-18 text-primary">shopping_cart</i> Sales</p>
+                                    <span>142</span>
+                                </div>
+                            </div>
+                            <!-- MENU -->
+                            <ul class="drawer-menu" id="userMenu" data-children=".drawer-submenu">
+                                <li class="drawer-menu-item">
+                                    <a href="../account.html">
+                                        <i class="material-icons">lock</i>
+                                        <span class="drawer-menu-text"> Account</span>
+                                    </a>
+                                </li>
+                                <li class="drawer-menu-item">
+                                    <a href="../profile.html">
+                                        <i class="material-icons">account_circle</i>
+                                        <span class="drawer-menu-text"> Profile</span>
+                                    </a>
+                                </li>
+                                <li class="drawer-menu-item">
+                                    <a href="../login.html">
+                                        <i class="material-icons">exit_to_app</i>
+                                        <span class="drawer-menu-text"> Logout</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!-- // END drawer -->
+
+        </div>
+        <!-- // END drawer-layout -->
+
+
+
+        <!-- jQuery -->
+        <script src="../assets/vendor/jquery.min.js"></script>
+
+        <!-- Bootstrap -->
+        <script src="../assets/vendor/popper.js"></script>
+        <script src="../assets/vendor/bootstrap.min.js"></script>
+
+        <!-- Simplebar -->
+        <!-- Used for adding a custom scrollbar to the drawer -->
+        <script src="../assets/vendor/simplebar.js"></script>
+
+
+        <!-- Vendor -->
+        <script src="../assets/vendor/Chart.min.js"></script>
+        <script src="../assets/vendor/moment.min.js"></script>
+
+        <!-- APP -->
+        <script src="../assets/js/color_variables.js"></script>
+        <script src="../assets/js/app.js"></script>
+
+
+        <script src="../assets/vendor/dom-factory.js"></script>
+        <!-- DOM Factory -->
+        <script src="../assets/vendor/material-design-kit.js"></script>
+        <!-- MDK -->
+
+
+
+        <script>
+            checkAdminLogin();
+             addAdminMenu();
+            (function () {
+                'use strict';
+                // Self Initialize DOM Factory Components
+                domFactory.handler.autoInit()
+
+
+                // Connect button(s) to drawer(s)
+                var sidebarToggle = document.querySelectorAll('[data-toggle="sidebar"]')
+
+                sidebarToggle.forEach(function (toggle) {
+                    toggle.addEventListener('click', function (e) {
+                        var selector = e.currentTarget.getAttribute('data-target') || '#default-drawer'
+                        var drawer = document.querySelector(selector)
+                        if (drawer) {
+                            if (selector == '#default-drawer') {
+                                $('.container-fluid').toggleClass('container--max');
+                            }
+                            drawer.mdkDrawer.toggle();
+                        }
+                    })
+                })
+            })()
+        </script>
+
+
+        <script src="../assets/vendor/jquery.dataTables.js"></script>
+        <script src="../assets/vendor/dataTables.bootstrap4.js"></script>
+
+        <script>
+
+            crLibreApi_getUsersCompanny("tableBody");
+
+        </script>
+
+
+    </body>
+
+</html>

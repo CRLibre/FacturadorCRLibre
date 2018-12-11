@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>Hero</title>
+        <title>Facturador</title>
         <!-- Prevent the demo from appearing in search engines -->
         <meta name="robots" content="noindex" />
         <!-- App CSS -->
@@ -33,7 +32,7 @@
                                 <button class="btn btn-link text-white pl-0" type="button" data-toggle="sidebar">
                                     <i class="material-icons align-middle md-36">short_text</i>
                                 </button>
-                                <div class="page-title m-0">Subir Certificado</div>
+                                <div class="page-title m-0">Configuracion</div>
                             </nav>
                         </div>
                     </div>
@@ -42,29 +41,52 @@
                     <div class="mdk-header-layout__content ls-top-navbar mdk-header-layout__content--scrollable h-100">
                         <!-- main content -->
                         <div class="container-fluid">
-                            <h2>Certificado de Hacienda</h2>
+                            <div class="row align-items-center mb-3">
+                                <div class="col-md-8">
+                                    <h1 class="h2 mb-0">Ministerio Hacienda</h1>
+                                    <ol class="breadcrumb">
+                                        <li>
+                                            <a href="#">Inicio</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Configuracion</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Cunsulta XML</a>
+                                        </li>
+                                    </ol>
+                                </div>
+                                <div class="col-md-4 text-md-right">
+                                    <button class="btn btn-white">
+                                        <i class="material-icons md-18 align-middle">chevron_left</i>
+                                        <span class="align-middle">Atras</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <h2>Consulta estado comprobantes:</h2>
                             <p class="lead">
-                                En esta seccion debe de subir el certificado de Hacinda, puede ser de Produccion o de Sambox.
-                                Se debe especificar en la seccion correspondiente.
+                                Este modulo consulta el esta de los comprobantes, debe ingresar la clave manual
                             </p>
                             <hr />
                             <div class="card">
-
                                 <div class="card-body">
-                                    <form />
+                                    <form />   
+                                  
                                     <div class="form-group">
-                                        <label for="exampleFormControlFile1">Favor, adjuntar el certificado .p12</label>
-                                        <input type='file' class='form-control-file' id="fileToUpload"/>
+                                        <label for="order_expected">Clave</label>
+                                        <input type="text" class="form-control" id="mh_clave" required placeholder="50627071800070232071700100001040000001004100000004">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleFormControlFile1">Seleccione el hambiente</label>
-                                        <select class="form-control">
-                                            <option value="api-prod" selected>Sandbox</option> 
-                                            <option value="api-stag">Produccion</option>
+                                        <select id='client_id' class="form-control">
+                                            <option value="api-stag" selected>Sandbox</option> 
+                                            <option value="api-prod">Produccion</option>
                                         </select>
                                     </div>
+
                                     <div class="form-group">
-                                        <input type="button" onclick="crLibreApi_certiUp_call();" class="btn btn-primary" value="Subir"></input>
+                                        <input type="button" onclick="crLibreApi_consultaClave();" class="btn btn-primary" value="Consultar"></input>
                                     </div>
                                     </form>
 
@@ -83,29 +105,20 @@
             </div>
         </div>
         <!-- // END drawer-layout -->
-
-
-
         <!-- jQuery -->
         <script src="./assets/vendor/jquery.min.js"></script>
-
         <!-- Bootstrap -->
         <script src="./assets/vendor/popper.js"></script>
         <script src="./assets/vendor/bootstrap.min.js"></script>
-
         <!-- Simplebar -->
         <!-- Used for adding a custom scrollbar to the drawer -->
         <script src="./assets/vendor/simplebar.js"></script>
-
-
         <!-- Vendor -->
         <script src="./assets/vendor/Chart.min.js"></script>
         <script src="./assets/vendor/moment.min.js"></script>
-
         <!-- APP -->
         <script src="./assets/js/color_variables.js"></script>
         <script src="./assets/js/app.js"></script>
-
 
         <script src="./assets/vendor/dom-factory.js"></script>
         <!-- DOM Factory -->
@@ -115,16 +128,14 @@
 
 
         <script>
+                                            checkUserLogin();
                                             addmenu();
                                             (function () {
                                                 'use strict';
                                                 // Self Initialize DOM Factory Components
                                                 domFactory.handler.autoInit()
-
-
                                                 // Connect button(s) to drawer(s)
                                                 var sidebarToggle = document.querySelectorAll('[data-toggle="sidebar"]')
-
                                                 sidebarToggle.forEach(function (toggle) {
                                                     toggle.addEventListener('click', function (e) {
                                                         var selector = e.currentTarget.getAttribute('data-target') || '#default-drawer'

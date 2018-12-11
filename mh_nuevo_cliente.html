@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Facturador</title>
+        <!-- Prevent the demo from appearing in search engines -->
+        <meta name="robots" content="noindex" />
+        <!-- App CSS -->
+        <link type="text/css" href="./assets/css/app.css" rel="stylesheet" />
+        <link type="text/css" href="./assets/css/app.rtl.css" rel="stylesheet" />
+        <link type="text/css" href="./assets/css/sweetalert.css" rel="stylesheet" />
+        <!-- Simplebar -->
+        <link type="text/css" href="./assets/vendor/simplebar.css" rel="stylesheet" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- Import de Js -->
+        <script src="./assets/js/jquery-3.3.1.min.js"></script>
+        <script src="./assets/js/crLibreFront.js"></script>
+        <script src="./assets/js/crLibreApi.js"></script>
+        <script src="./assets/js/sweetalert.min.js"></script>
+    </head>
+
+
+    <body>
+        <div class="mdk-drawer-layout js-mdk-drawer-layout" data-fullbleed="" data-push="" data-responsive-width="992px" data-has-scrolling-region="">
+            <div class="mdk-drawer-layout__content">
+                <!-- header-layout -->
+                <div class="mdk-header-layout js-mdk-header-layout  mdk-header--fixed  mdk-header-layout__content--scrollable">
+                    <!-- header -->
+                    <div class="mdk-header js-mdk-header bg-primary" data-fixed="">
+                        <div class="mdk-header__content">
+                            <nav class="navbar navbar-expand-md bg-primary navbar-dark d-flex-none">
+                                <button class="btn btn-link text-white pl-0" type="button" data-toggle="sidebar">
+                                    <i class="material-icons align-middle md-36">short_text</i>
+                                </button>
+                                <div class="page-title m-0">Creacion de Cliente</div>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <!-- content -->
+                    <div class="mdk-header-layout__content ls-top-navbar mdk-header-layout__content--scrollable h-100">
+                        <!-- main content -->
+                        <div class="container-fluid container--wide">
+                            <div class="row align-items-center mb-3">
+                                <div class="col-md-8">
+                                    <h1 class="h2 mb-0">Registro de nuevo cliente</h1>
+                                    <ol class="breadcrumb">
+                                        <li>
+                                            <a href="#">Inicio</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Clientes</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">nuevo</a>
+                                        </li>
+                                    </ol>
+                                </div>
+                                <div class="col-md-4 text-md-right">
+                                    <button class="btn btn-white">
+                                        <i class="material-icons md-18 align-middle">chevron_left</i>
+                                        <span class="align-middle">Atras</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card card-body card-padded">                                
+                                <h1 class="h4 mb-0">1. Ubicacion</h1>
+                                <hr />
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="supplier">Provincia</label>
+                                            <select id="provinceSelect" class="select-2">
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="supplier">Canton</label>
+                                            <select id="cantonSelect" class="select-2">
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="supplier">Distrito</label>
+                                            <select id="distritoSelect" class="select-2">
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="supplier">Barrio</label>
+                                            <select id="barrioSelect" class="select-2">
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="order_expected">Otras Señas</label>
+                                            <input type="text" class="form-control" id="otrasSenas" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h1 class="h4 mb-0">2. Informacion de Facturacion</h1>
+                            <hr />
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="order_expected">Nombre de Cliente</label>
+                                        <input type="text" class="form-control" id="nombreCliente" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="supplier">Tipo Cedula</label>
+                                        <select id="typeIdSelect" class="select-2">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="order_expected">Numero de Cedula</label>
+                                        <input type="number" class="form-control" id="numeroCedula" placeholder="702320717">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="order_expected">Nombre Comercial</label>
+                                        <input type="text" class="form-control" id="nombreComercial" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="order_expected">Correo Electronico</label>
+                                        <input type="text" class="form-control" id="correoPrincipal" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="order_expected">Copias en correo (separado por comas ;)</label>
+                                        <input type="text" class="form-control" id="copiasCorreo" placeholder="">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="order_expected">Telefono</label>
+                                        <input type="text" class="form-control" id="telefono" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="order_expected">Fax</label>
+                                        <input type="text" class="form-control" id="numeroFax" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <hr/>
+                                    <input type="button" onclick="crLibreApi_add_companny_reciver();" class="btn btn-primary" value="Guardar Cliente"></input>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- drawer -->
+            <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
+            </div>
+            <!-- // END drawer -->
+        </div>
+        <!-- // END drawer-layout -->
+        <!-- jQuery -->
+        <script src="./assets/vendor/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="./assets/vendor/popper.js"></script>
+        <script src="./assets/vendor/bootstrap.min.js"></script>
+
+        <!-- Simplebar -->
+        <!-- Used for adding a custom scrollbar to the drawer -->
+        <script src="./assets/vendor/simplebar.js"></script>
+
+
+        <!-- Vendor -->
+        <script src="./assets/vendor/Chart.min.js"></script>
+        <script src="./assets/vendor/moment.min.js"></script>
+
+        <!-- APP -->
+        <script src="./assets/js/color_variables.js"></script>
+        <script src="./assets/js/app.js"></script>
+
+
+        <script src="./assets/vendor/dom-factory.js"></script>
+        <!-- DOM Factory -->
+        <script src="./assets/vendor/material-design-kit.js"></script>
+        <!-- MDK -->
+
+
+
+        <script>
+                                        checkUserLogin();
+                                        addmenu();
+                                        (function () {
+                                            'use strict';
+                                            // Self Initialize DOM Factory Components
+                                            domFactory.handler.autoInit()
+                                            // Connect button(s) to drawer(s)
+                                            var sidebarToggle = document.querySelectorAll('[data-toggle="sidebar"]')
+
+                                            sidebarToggle.forEach(function (toggle) {
+                                                toggle.addEventListener('click', function (e) {
+                                                    var selector = e.currentTarget.getAttribute('data-target') || '#default-drawer'
+                                                    var drawer = document.querySelector(selector)
+                                                    if (drawer) {
+                                                        if (selector == '#default-drawer') {
+                                                            $('.container-fluid').toggleClass('container--max');
+                                                        }
+                                                        drawer.mdkDrawer.toggle();
+                                                    }
+                                                })
+                                            })
+                                        })()
+        </script>
+
+
+        <script src="./assets/vendor/select2.full.min.js"></script>
+        <script src="./assets/vendor/bootstrap-datepicker.min.js"></script>
+
+        <script>
+
+                                        $('.select-2').select2({
+                                            theme: 'bootstrap',
+                                            placeholder: 'Select an option'
+                                        });
+
+                                        $('.datepicker-new-order').datepicker({
+                                            orientation: 'auto'
+                                        });
+
+                                        crLibreApi_getAllProvinces('provinceSelect');
+                                        crLibreApi_getTypeOfId('typeIdSelect');
+
+                                        $("#provinceSelect").change(function () {
+                                            crLibreApi_getCanton($("#provinceSelect").val(), 'cantonSelect');
+                                        });
+
+                                        $("#provinceSelect").change(function () {
+                                            crLibreApi_getCanton($("#provinceSelect").val(), 'cantonSelect');
+                                        });
+
+
+                                        $("#cantonSelect").change(function () {
+                                            crLibreApi_getDistrict($("#provinceSelect").val(), $("#cantonSelect").val(), 'distritoSelect');
+                                        });
+
+                                        $("#distritoSelect").change(function () {
+                                            crLibreApi_getNeighborhood($("#provinceSelect").val(), $("#cantonSelect").val(), $("#distritoSelect").val(), 'barrioSelect');
+                                        });
+                                        // Get current date
+                                        let today = new Date();
+                                        let dd = today.getDate();
+                                        let mm = today.getMonth() + 1;
+                                        const yyyy = today.getFullYear();
+                                        let hora = today.getHours();
+                                        let minute = today.getMinutes();
+                                        let segundos = today.getSeconds();
+                                        if (dd < 10) {
+                                            dd = '0' + dd
+                                        }
+
+                                        if (mm < 10) {
+                                            mm = '0' + mm
+                                        }
+                                        //2018-05-15T16:00:00-06:00
+                                        today = yyyy + '-' + mm + '-' + dd + 'T' + hora + ':' + minute + ':' + segundos + '-06:00';
+
+                                        $('.datepicker-disabled').val(today)
+
+                                        $('.select2-results').append(`<a href="#">
+                      <i class="material-icons md-18 align-middle">add_circle_outline</i>
+                      <span class="align-middle">Add Supplier</span>
+                    </a>`);
+        </script>
+
+
+    </body>
+
+</html>

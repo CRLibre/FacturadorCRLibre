@@ -1,0 +1,58 @@
+#divTT {
+  font-size: 12px;
+  font-family: 'Times New Roman';
+}
+
+td,
+th,
+tr,
+table {
+  border-top: 1px solid black;
+  border-collapse: collapse;
+}
+
+#teClave{
+    overflow-wrap: break-word;
+}
+
+td.producto,
+th.producto {
+  width: 85px;
+  max-width: 85px;
+}
+
+td.cantidad,
+th.cantidad {
+  width: 85px;
+  max-width: 85px;
+  word-break: break-all;
+}
+
+td.precio,
+th.precio {
+  width: 70px;
+  max-width: 70px;
+  word-break: break-all;
+}
+
+.centrado {
+  text-align: center;
+  align-content: center;
+  overflow-wrap: break-word;
+}
+
+.ticket {
+  width: 195px;
+  max-width: 195px;
+}
+
+img {
+  max-width: inherit;
+  width: inherit;
+}
+
+@media print{
+  .oculto-impresion, .oculto-impresion *{
+    display: none !important;
+  }
+}

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Facturador</title>
+        <!-- Prevent the demo from appearing in search engines -->
+        <meta name="robots" content="noindex" />
+        <!-- App CSS -->
+        <link type="text/css" href="./assets/css/app.css" rel="stylesheet" />
+        <link type="text/css" href="./assets/css/app.rtl.css" rel="stylesheet" />
+        <link type="text/css" href="./assets/css/sweetalert.css" rel="stylesheet" />
+        <!-- Simplebar -->
+        <link type="text/css" href="./assets/vendor/simplebar.css" rel="stylesheet" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- Import de Js -->
+        <script src="./assets/js/jquery-3.3.1.min.js"></script>
+        <script src="./assets/js/crLibreFront.js"></script>
+        <script src="./assets/js/crLibreApi.js"></script>
+        <script src="./assets/js/sweetalert.min.js"></script>
+    </head>
+    <body>
+        <div class="mdk-drawer-layout js-mdk-drawer-layout" data-fullbleed="" data-push="" data-responsive-width="992px" data-has-scrolling-region="">
+            <div class="mdk-drawer-layout__content">
+                <!-- header-layout -->
+                <div class="mdk-header-layout js-mdk-header-layout  mdk-header--fixed  mdk-header-layout__content--scrollable">
+                    <!-- header -->
+                    <div class="mdk-header js-mdk-header bg-primary" data-fixed="">
+                        <div class="mdk-header__content">
+                            <nav class="navbar navbar-expand-md navbar-dark bg-primary d-flex-none">
+                                <button class="btn btn-link text-white pl-0" type="button" data-toggle="sidebar">
+                                    <i class="material-icons align-middle md-36">short_text</i>
+                                </button>
+                                <div class="page-title m-0">Configuracion</div>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <!-- content -->
+                    <div class="mdk-header-layout__content ls-top-navbar mdk-header-layout__content--scrollable h-100">
+                        <!-- main content -->
+                        <div class="container-fluid">
+                            <div class="row align-items-center mb-3">
+                                <div class="col-md-8">
+                                    <h1 class="h2 mb-0">Aceptacion de Facturas</h1>
+                                    <ol class="breadcrumb">
+                                        <li>
+                                            <a href="#">Inicio</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Comprobantes</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Aceptacion de Facturas</a>
+                                        </li>
+                                    </ol>
+                                </div>
+                                <div class="col-md-4 text-md-right">
+                                    <button class="btn btn-white">
+                                        <i class="material-icons md-18 align-middle">chevron_left</i>
+                                        <span class="align-middle">Atras</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <form />
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Favor, adjuntar el XML de la Factura</label>
+                                        <input type='file' accept="text/xml" onchange='crLibreApi_read_xml(event, "resumen")'  class='form-control-file'/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Mensaje:</label>
+                                        <select onchange="crLibreApi_companny_consecutive_by_terminal($(this).val());" id="mensaje" class="form-control">
+                                            <option value="05" selected>Aceptacion</option> 
+                                            <option value="06">Aceptacion Parcial</option>
+                                            <option value="07">Rechazo</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="order_expected">Detalles:</label>
+                                        <input id="detalle" type="text" class="form-control"  placeholder="informacion extra...">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="order_created">Fecha de Emision Mensaje</label>
+                                        <input type="text" id="mrDate" class="datepicker-disabled form-control" disabled="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="order_created">Consecutivo Mensaje</label>
+                                        <input type="text" id="feConsecutivo" class="datepicker-disabled form-control" disabled="" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="note">Resumen del emisor</label>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="order_created">Nombre Emisor</label>
+                                                    <input readonly="" id="emisorNombre" class="datepicker-disabled form-control" disabled="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="order_created">Nombre Comercial Emisor</label>
+                                                    <input readonly="" id="emisorNombreComercial" class="datepicker-disabled form-control" disabled="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="order_created">Correo</label>
+                                                    <input readonly="" id="emisorCorreoElectronico" class="datepicker-disabled form-control" disabled="">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+
+                                                <div class="form-group">
+                                                    <label for="order_created">Tipo Cedula Emisor</label>
+                                                    <input readonly="" id="tipoCedulaEmisor" class="datepicker-disabled form-control" disabled="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="order_created">Cedula Emisor</label>
+                                                    <input readonly="" id="emisorNumero" class="datepicker-disabled form-control" disabled="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                    <div class="form-group">
+                                        <label for="note">Resumen de Receptor</label>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="order_created">Nombre Receptor</label>
+                                                    <input readonly="" id="nombreReceptor" class="datepicker-disabled form-control" disabled="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="order_created">Nombre Comercial Receptor</label>
+                                                    <input readonly="" id="nombreComercialReceptor" class="datepicker-disabled form-control" disabled="">
+                                                </div>
+
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="order_created">Tipo Cedula Receptor</label>
+                                                    <input readonly="" id="tipoCedulaReceptor" class="datepicker-disabled form-control" disabled="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="order_created">Cedula del Recptor</label>
+                                                    <input readonly="" id="cedulaReceptor" class="datepicker-disabled form-control" disabled="">
+                                                </div>
+
+                                            </div>
+                                        </div>  
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="note">Resumen de Factura</label>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="order_created">Clave</label>
+                                                    <input readonly="" id="clave" class="datepicker-disabled form-control" disabled="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="order_created">Moneda</label>
+                                                    <input readonly="" id="moneda" class="datepicker-disabled form-control" disabled="">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="order_created">Total</label>
+                                                    <input readonly="" id="total" class="datepicker-disabled form-control" disabled="">
+                                                </div>
+
+
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="order_created">Fecha</label>
+                                                    <input readonly="" id="fecha" class="datepicker-disabled form-control" disabled="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="order_created">Impuesto</label>
+                                                    <input readonly="" id="impuesto" class="datepicker-disabled form-control" disabled="">
+                                                </div>
+
+                                            </div>
+                                        </div>  
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="button" onclick="crLibreApi_mensaje_comprobacion();" class="btn btn-primary" value="Enviar"></input>
+                                    </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- // END drawer-layout__content -->
+
+            <!-- drawer -->
+            <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
+
+            </div>
+        </div>
+        <!-- // END drawer-layout -->
+        <!-- jQuery -->
+        <script src="./assets/vendor/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="./assets/vendor/popper.js"></script>
+        <script src="./assets/vendor/bootstrap.min.js"></script>
+        <!-- Simplebar -->
+        <!-- Used for adding a custom scrollbar to the drawer -->
+        <script src="./assets/vendor/simplebar.js"></script>
+        <!-- Vendor -->
+        <script src="./assets/vendor/Chart.min.js"></script>
+        <script src="./assets/vendor/moment.min.js"></script>
+        <!-- APP -->
+        <script src="./assets/js/color_variables.js"></script>
+        <script src="./assets/js/app.js"></script>
+
+        <script src="./assets/vendor/dom-factory.js"></script>
+        <!-- DOM Factory -->
+        <script src="./assets/vendor/material-design-kit.js"></script>
+        <!-- MDK -->
+
+
+
+        <script>
+                                            checkUserLogin();
+                                            addmenu();
+                                            crLibreApi_companny_consecutive_by_terminal($("#mensaje").val());
+                                            (function () {
+                                                'use strict';
+                                                // Self Initialize DOM Factory Components
+                                                domFactory.handler.autoInit()
+                                                // Connect button(s) to drawer(s)
+                                                var sidebarToggle = document.querySelectorAll('[data-toggle="sidebar"]')
+                                                sidebarToggle.forEach(function (toggle) {
+                                                    toggle.addEventListener('click', function (e) {
+                                                        var selector = e.currentTarget.getAttribute('data-target') || '#default-drawer'
+                                                        var drawer = document.querySelector(selector)
+                                                        if (drawer) {
+                                                            if (selector == '#default-drawer') {
+                                                                $('.container-fluid').toggleClass('container--max');
+                                                            }
+                                                            drawer.mdkDrawer.toggle();
+                                                        }
+                                                    })
+                                                })
+                                            })()
+
+                                            // Get current date
+                                            let today = new Date();
+                                            let dd = today.getDate();
+                                            let mm = today.getMonth() + 1;
+                                            const yyyy = today.getFullYear();
+                                            let hora = today.getHours();
+                                            let minute = today.getMinutes();
+                                            let segundos = today.getSeconds();
+                                            if (dd < 10) {
+                                                dd = '0' + dd
+                                            }
+                                            if (hora < 10) {
+                                                hora = '0' + hora
+                                            }
+                                            if (minute < 10) {
+                                                minute = '0' + minute
+                                            }
+
+                                            if (mm < 10) {
+                                                mm = '0' + mm
+                                            }
+                                            //2018-05-15T16:00:00-06:00
+                                            today = yyyy + '-' + mm + '-' + dd + 'T' + hora + ':' + minute + ':' + segundos + '-06:00';
+
+                                            $('#mrDate').val(today);
+        </script>
+    </body>
+
+</html>

@@ -11,6 +11,7 @@
         <link type="text/css" href="./assets/css/app.css" rel="stylesheet" />
         <link type="text/css" href="./assets/css/app.rtl.css" rel="stylesheet" />
         <link type="text/css" href="./assets/css/sweetalert.css" rel="stylesheet" />
+        <link type="text/css" href="./assets/css/style.css?v=0..01" rel="stylesheet" />
         <!-- Simplebar -->
         <link type="text/css" href="./assets/vendor/simplebar.css" rel="stylesheet" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -19,10 +20,62 @@
         <script src="./assets/js/crLibreFront.js"></script>
         <script src="./assets/js/crLibreApi.js"></script>
         <script src="./assets/js/sweetalert.min.js"></script>
+        <script src="./assets/js/script.js"></script>
     </head>
 
 
     <body>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header" style="padding:35px 50px;">
+                        <button type="button" class="close" data-dismiss="modal">Cerrar</button>
+                    </div>
+                    <div class="modal-body" style="padding:40px 50px;">
+                        <div id="divTT">
+                            <center>
+                                <div style="padding:6px 6px 6px 6px; border:dotted"  class="ticket">
+                                    <p class="centrado">TIQUETE DE VENTA
+                                        <br>
+                                    <div id="teNombreComercial"></div>
+                                    <div   id="teCedula" class="centrado"></div>
+                                    <div   id="teTel" class="centrado"></div>
+                                    <div id="teFecha"></div>
+                                    <p  id="teClave" class="centrado"></p>
+                                    <div  id="teConsucutivo" class="centrado"></div>
+                                    <br>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th class="cantidad">CANT</th>
+                                                <th class="producto">PRODUCTO</th>
+                                                <th class="precio">Monto</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="linesTE">
+
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <p class="centrado">Gracias por su compra
+                                        <br>Emitida conforme lo establecido en la resolucion de Facturacion Electronica, N DGT-R-48-2016 siete de octubre
+                                        de dos mil dieciséis de la Direccion General de Tributacion</p>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="oculto-impresion" onclick="imprimir()">Imprimir</button>
+                    </div>
+                </div>
+
+            </div>
+        </div> 
+
+
         <div class="mdk-drawer-layout js-mdk-drawer-layout" data-fullbleed="" data-push="" data-responsive-width="992px" data-has-scrolling-region="">
             <div class="mdk-drawer-layout__content">
                 <!-- header-layout -->
@@ -34,7 +87,7 @@
                                 <button class="btn btn-link text-white pl-0" type="button" data-toggle="sidebar">
                                     <i class="material-icons align-middle md-36">short_text</i>
                                 </button>
-                                <div class="page-title m-0">Creacion de Factura</div>
+                                <div class="page-title m-0">Creacion de Tiquete</div>
                             </nav>
                         </div>
                     </div>
@@ -45,7 +98,7 @@
                         <div class="container-fluid container--wide">
                             <div class="row align-items-center mb-3">
                                 <div class="col-md-8">
-                                    <h1 class="h2 mb-0">Factura Electronica</h1>
+                                    <h1 class="h2 mb-0">Tiquete Electronico</h1>
                                     <ol class="breadcrumb">
                                         <li>
                                             <a href="#">Inicio</a>
@@ -78,8 +131,8 @@
                                                 <th>Unidad</th>
                                                 <th>Cantidad</th>
                                                 <th>Precio Unitario</th>
-                                                <th>Descuento</th>
-                                                <th>I.V</th>
+                                                <th>Descuento %</th>
+                                                <th>I.V %</th>
                                                 <th>SubTotal</th>
                                                 <th>Precio Total</th>
                                                 <th class="text-right">Action</th>
@@ -107,18 +160,10 @@
                                     <i class="material-icons md-12 align-middle">add</i>
                                 </button>
                                 <hr />
-                                <h1 class="h4 mb-0">2. Cliente</h1>
+                                <h1 class="h4 mb-0">2. Informacion</h1>
                                 <hr />
                                 <form action="#" class="mb-3" />
                                 <div class="row">
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="supplier">Nombre del Cliente</label>
-                                            <select id="idReceptor" class="select-2">
-                                                <option value="702320717" selected="" />CRLibre       
-                                            </select>
-                                        </div>
-                                    </div>
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="supplier">Metodo de Pago</label>
@@ -177,10 +222,9 @@
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="order_expected">Consecutivo de Factura</label>
+                                            <label for="order_expected">Consecutivo de Tiquete</label>
                                             <input type="text" readonly class="form-control" id="feConsecutivo" placeholder="">
                                         </div>
-
                                     </div>
                                 </div>
 
@@ -188,19 +232,20 @@
                                     <div class="col-md-6">
                                         <hr />
                                         <div class="d-flex align-items-center justify-content-between">
-                                            <strong>Total Comprobante:</strong>
+                                            <strong>T. Comprobante:</strong>
                                             <strong><input value="0" readonly type="text" id="total" class="form-control"  placeholder=""></strong>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <hr/>
-                                            <input type="button" onclick="crLibreApi_FE();" class="btn btn-primary" value="Generar Factura"></input>
-                                            <button type="button" class="btn btn-primary" onclick="createAndOpenFile(descargaXMLFirmado)" id="myBtn">Descargar XML</button>
+                                            <input type="button" onclick="crLibreApi_TE();" class="btn btn-primary" value="Generar Tiquete"></input>
+                                            <button type="button" class="btn btn-primary" id="myBtn">Imprimir</button>
 
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="card card-body card-subtotals bg-light">
@@ -210,24 +255,24 @@
                                                     <div><input value="0" readonly type="text" id="cantidad" class="form-control"  placeholder=""></div>
                                                 </li>       
                                                 <li>
-                                                    <div>TotalServGravados</div>
+                                                    <div>T.Serv.Gravados</div>
                                                     <div><input value="0" readonly type="text" id="TotalServGravados" class="form-control"  placeholder=""></div>
                                                 </li>                                                
-                                                <li><div >TotalServExentos</div>
+                                                <li><div >T.Serv.Exentos</div>
                                                     <div><input value="0" readonly type="text" id="TotalServExentos" class="form-control"  placeholder=""></div>
                                                 </li>
                                                 <li>
-                                                    <div>TotalMercanciasGravadas</div>
+                                                    <div>T.Merc.Gravadas</div>
                                                     <div><input value="0" readonly type="text" id="TotalMercanciasGravadas" class="form-control"  placeholder=""></div>
                                                 </li>                                                
-                                                <li> <div >TotalMercanciasExentas</div>
+                                                <li> <div >T.MercExentas</div>
                                                     <div><input value="0" readonly type="text" id="TotalMercanciasExentas" class="form-control"  placeholder=""></div>
                                                 </li>
                                                 <li>
-                                                    <div>TotalGravado</div>
+                                                    <div>T.Gravado</div>
                                                     <div><input value="0" readonly type="text" id="TotalGravado" class="form-control"  placeholder=""></div>
                                                 </li>                                                
-                                                <li> <div >TotalExento</div>
+                                                <li> <div >T.Exento</div>
                                                     <div><input value="0" readonly type="text" id="TotalExento" class="form-control"  placeholder=""></div>
                                                 </li>
 
@@ -258,7 +303,6 @@
 
 
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -299,7 +343,6 @@
         <script>
                                                 checkUserLogin();
                                                 addmenu();
-                                                crLibreApi_AllReceiverCB("idReceptor");
                                                 (function () {
                                                     'use strict';
                                                     // Self Initialize DOM Factory Components
@@ -328,6 +371,12 @@
 
         <script>
                                                 $("#myBtn").hide();
+                                                $(document).ready(function () {
+                                                    $("#myBtn").click(function () {
+                                                        $("#myModal").modal();
+                                                    });
+                                                });
+
                                                 $('.select-2').select2({
                                                     theme: 'bootstrap',
                                                     placeholder: 'Select an option'
@@ -371,7 +420,7 @@
                     </a>`);
 
 
-                                                crLibreApi_companny_consecutive_by_terminal("FE");
+                                                crLibreApi_companny_consecutive_by_terminal("TE");
         </script>
 
 
